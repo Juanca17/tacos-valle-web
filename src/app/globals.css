@@ -3,19 +3,175 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f5ecea;
   --foreground: #171717;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #171717;
+    --foreground: #f5ecea;
   }
+}
+
+@font-face {
+  font-family: "GTAlpinaBold";
+  src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "GTAlpinaBoldItalic";
+  src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold-Italic.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "JeanLucThin";
+  src: url("/fonts/2_JeanLuc/JeanLuc-Thin.otf") format("opentype");
+  font-weight: thin;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "SimplonBPMono";
+  src: url("/fonts/3_SimplonBPMono/SimplonBPMono-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChampionGothic";
+  src: url("/fonts/4_ChampionGothic/ChampionGothic-Featherweight.ttf")
+    format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ChampionGothic";
+  src: url("/fonts/4_ChampionGothic/ChampionGothic-Lightweight.ttf")
+    format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ChampionGothic";
+  src: url("/fonts/4_ChampionGothic/ChampionGothic-Welterweight.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ChampionGothic";
+  src: url("/fonts/4_ChampionGothic/ChampionGothic-Middleweight.ttf")
+    format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ChampionGothic";
+  src: url("/fonts/4_ChampionGothic/ChampionGothic-Heavyweight.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: normal;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "SimplonBPMono", Arial, Helvetica, sans-serif;
+}
+
+.font-gt-alpina-bold {
+  font-family: "GTAlpinaBold", Arial, Helvetica, sans-serif;
+}
+.font-gt-alpina-bold-italic {
+  font-family: "GTAlpinaBoldItalic", Arial, Helvetica, sans-serif;
+}
+
+.font-jean-luc-thin {
+  font-family: "JeanLucThin", Arial, Helvetica, sans-serif;
+}
+.font-simplon-bp-mono {
+  font-family: "SimplonBPMono", Arial, Helvetica, sans-serif;
+}
+
+.font-champion-gothic-200 {
+  font-family: "ChampionGothic";
+  font-weight: 200;
+}
+
+.font-champion-gothic-300 {
+  font-family: "ChampionGothic";
+  font-weight: 300;
+}
+
+.font-champion-gothic-400 {
+  font-family: "ChampionGothic";
+  font-weight: 400;
+}
+
+.font-champion-gothic {
+  font-family: "ChampionGothic";
+  font-weight: 500;
+}
+
+.font-champion-gothic-bold {
+  font-family: "ChampionGothic";
+  font-weight: bold;
+}
+
+.header_title {
+  padding: 20px;
+  background-color: #e95432;
+}
+
+.no_selector {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  pointer-events: none;
+}
+
+.circulo_en_numero {
+  border-radius: 50%;
+  width: 36px;
+  height: 30px;
+  padding: 8px;
+  border: 0.5px solid #171717;
+  text-align: center;
+}
+
+.text_button_white {
+  color: white;
+}
+.text_button_white:hover {
+  color: #f9d300;
+  text-decoration: underline;
+}
+
+.text_button {
+  color: #171717;
+}
+
+.text_button:hover {
+  color: #f9d300;
+  text-decoration: underline;
+}
+
+.custom_button {
+  font-size: 36px;
+  min-width: 300px;
+  box-shadow: 0px 6px 0px black;
+  transition: all 0.1s ease-in-out;
+}
+
+.custom_button:active {
+  box-shadow: none;
+  transform: translateY(4px) scale(0.95);
 }
