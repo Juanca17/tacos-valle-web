@@ -19,6 +19,7 @@ export default function DraggableComponent({ id, position, ...props }) {
         transform: transform
           ? `translate3d(${transform.x}px, ${transform.y}px, 0)`
           : "none",
+        zIndex: 200,
       }}
     >
       {props.children}

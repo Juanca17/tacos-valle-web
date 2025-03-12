@@ -10,12 +10,37 @@ import DraggableComponent from "./components/DraggableComponent";
 
 export default function Page() {
   const tacosPlaceholder = useRef(null);
+  const armaPlaceholder = useRef(null);
   const initialPositions = {
     box1: {
       x: 974.5,
       y: 411.9001775527345,
     },
     box2: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box3: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box4: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box5: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box6: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box7: {
+      x: 1075.5,
+      y: 413.1000980351563,
+    },
+    box8: {
       x: 1075.5,
       y: 413.1000980351563,
     },
@@ -38,13 +63,22 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (tacosPlaceholder.current) {
+    if (tacosPlaceholder.current && armaPlaceholder.current) {
       const { offsetLeft, offsetTop } = tacosPlaceholder.current;
+      const { offsetLeft: armaLeft, offsetTop: armaTop } =
+        armaPlaceholder.current;
 
       // Establece la posición inicial con respecto a offsetLeft y offsetTop
       setPositions({
         box1: { x: offsetLeft, y: offsetTop },
         box2: { x: offsetLeft + 100, y: offsetTop }, // Separa los tacos
+
+        box3: { x: armaLeft + 600, y: armaTop + 300 },
+        box4: { x: armaLeft + 1100, y: armaTop + 100 },
+        box5: { x: armaLeft + 450, y: armaTop + 40 },
+        box6: { x: armaLeft + 750, y: armaTop + 100 },
+        box7: { x: armaLeft + 100, y: armaTop + 200 },
+        box8: { x: armaLeft + 400, y: armaTop + 250 },
       });
     }
   }, []);
@@ -414,6 +448,84 @@ export default function Page() {
           className="relative w-full h-[110vh] flex items-center justify-center"
           style={{ background: "#E9471F" }}
         >
+          <DraggableComponent
+            id="box3"
+            position={positions.box3}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/ASADA.png"
+              alt="Taco"
+              width={200}
+              height={200}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
+          <DraggableComponent
+            id="box4"
+            position={positions.box4}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/ESPIRO_PAPAS.png"
+              alt="Taco"
+              width={200}
+              height={200}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
+          <DraggableComponent
+            id="box5"
+            position={positions.box5}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/PASTOR.png"
+              alt="Taco"
+              width={200}
+              height={200}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
+          <DraggableComponent
+            id="box6"
+            position={positions.box6}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/PASTOR_NEGRO.png"
+              alt="Taco"
+              width={200}
+              height={200}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
+          <DraggableComponent
+            id="box7"
+            position={positions.box7}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/TIJUANITA.png"
+              alt="Taco"
+              width={200}
+              height={200}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
+          <DraggableComponent
+            id="box8"
+            position={positions.box8}
+            setPosition={setPositions}
+          >
+            <Image
+              src="/images/mesa/VASO.png"
+              alt="Taco"
+              width={150}
+              height={150}
+              className="h-auto w-100"
+            />
+          </DraggableComponent>
           <div style={{ width: "60%", maxWidth: "100%", maxHeight: "100%" }}>
             <Image
               src="/images/star.png"
@@ -426,6 +538,7 @@ export default function Page() {
             />
           </div>
           <div
+            ref={armaPlaceholder}
             className="no_selector text-white font-jean-luc-thin text-4xl sm:text-6xl md:text-8xl lg:text-10xl"
             style={{
               zIndex: 100,
