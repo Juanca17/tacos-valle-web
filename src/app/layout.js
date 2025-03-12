@@ -1,6 +1,5 @@
 import "./globals.css";
-const basePath =
-  process.env.NODE_ENV === "production" ? "/tacos-valle-web" : "";
+import { basePath } from "./config";
 
 export const metadata = {
   title: "Tacos del Valle",

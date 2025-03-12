@@ -16,13 +16,14 @@
 
 @font-face {
   font-family: "GTAlpinaBold";
-  src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf") format("truetype");
+  src: url("/tacos-valle-web/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf")
+    format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "GTAlpinaBoldItalic";
-  src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold-Italic.ttf")
+  src: url("/tacos-valle-web/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold-Italic.ttf")
     format("truetype");
   font-weight: bold;
   font-style: normal;
@@ -30,49 +31,51 @@
 
 @font-face {
   font-family: "JeanLucThin";
-  src: url("/fonts/2_JeanLuc/JeanLuc-Thin.otf") format("opentype");
+  src: url("/tacos-valle-web/fonts/2_JeanLuc/JeanLuc-Thin.otf")
+    format("opentype");
   font-weight: thin;
   font-style: normal;
 }
 
 @font-face {
   font-family: "SimplonBPMono";
-  src: url("/fonts/3_SimplonBPMono/SimplonBPMono-Medium.otf") format("opentype");
+  src: url("/tacos-valle-web/fonts/3_SimplonBPMono/SimplonBPMono-Medium.otf")
+    format("opentype");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: "ChampionGothic";
-  src: url("/fonts/4_ChampionGothic/ChampionGothic-Featherweight.ttf")
+  src: url("/tacos-valle-web/fonts/4_ChampionGothic/ChampionGothic-Featherweight.ttf")
     format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 @font-face {
   font-family: "ChampionGothic";
-  src: url("/fonts/4_ChampionGothic/ChampionGothic-Lightweight.ttf")
+  src: url("/tacos-valle-web/fonts/4_ChampionGothic/ChampionGothic-Lightweight.ttf")
     format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "ChampionGothic";
-  src: url("/fonts/4_ChampionGothic/ChampionGothic-Welterweight.ttf")
+  src: url("/tacos-valle-web/fonts/4_ChampionGothic/ChampionGothic-Welterweight.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "ChampionGothic";
-  src: url("/fonts/4_ChampionGothic/ChampionGothic-Middleweight.ttf")
+  src: url("/tacos-valle-web/fonts/4_ChampionGothic/ChampionGothic-Middleweight.ttf")
     format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "ChampionGothic";
-  src: url("/fonts/4_ChampionGothic/ChampionGothic-Heavyweight.ttf")
+  src: url("/tacos-valle-web/fonts/4_ChampionGothic/ChampionGothic-Heavyweight.ttf")
     format("truetype");
   font-weight: bold;
   font-style: normal;

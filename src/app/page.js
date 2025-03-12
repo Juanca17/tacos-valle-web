@@ -7,6 +7,7 @@ import { Sucursal } from "./components/Sucursal";
 import { DndContext } from "@dnd-kit/core";
 import { Button } from "./components/Button";
 import DraggableComponent from "./components/DraggableComponent";
+import { basePath } from "./config";
 
 export default function Page() {
   const tacosPlaceholder = useRef(null);
@@ -192,7 +193,7 @@ export default function Page() {
               >
                 <div style={{ width: "15rem" }}>
                   <Image
-                    src="/images/about-us/botella.png"
+                    src={`${basePath}/images/about-us/botella.png`}
                     alt="Botella"
                     layout="responsive"
                     width={20}
@@ -238,7 +239,7 @@ export default function Page() {
                       setPosition={setPositions}
                     >
                       <Image
-                        src="/images/about-us/taco1.png"
+                        src={`${basePath}/images/about-us/taco1.png`}
                         alt="Taco"
                         width={100}
                         height={100}
@@ -251,7 +252,7 @@ export default function Page() {
                       setPosition={setPositions}
                     >
                       <Image
-                        src="/images/about-us/taco2.png"
+                        src={`${basePath}/images/about-us/taco2.png`}
                         alt="Taco"
                         width={100}
                         height={100}
@@ -276,7 +277,7 @@ export default function Page() {
               >
                 <div style={{ width: "10rem" }}>
                   <Image
-                    src="/images/about-us/limon.png"
+                    src={`${basePath}/images/about-us/limon.png`}
                     alt="Limon"
                     layout="responsive"
                     width={20}
@@ -298,7 +299,7 @@ export default function Page() {
         >
           <div style={{ position: "absolute", top: "100px" }}>
             <Image
-              src="/images/reinventando/re1.png"
+              src={`${basePath}/images/reinventando/re1.png`}
               alt="Taco"
               width={350}
               height={350}
@@ -307,7 +308,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", top: "210px", left: "140px" }}>
             <Image
-              src="/images/reinventando/re2.png"
+              src={`${basePath}/images/reinventando/re2.png`}
               alt="Taco"
               width={350}
               height={350}
@@ -316,7 +317,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", top: "10px", left: "500px" }}>
             <Image
-              src="/images/reinventando/re3.png"
+              src={`${basePath}/images/reinventando/re3.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -325,7 +326,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", top: "100px", right: "500px" }}>
             <Image
-              src="/images/reinventando/re4.png"
+              src={`${basePath}/images/reinventando/re4.png`}
               alt="Taco"
               width={150}
               height={150}
@@ -334,7 +335,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", top: "50px", right: "50px" }}>
             <Image
-              src="/images/reinventando/re5.png"
+              src={`${basePath}/images/reinventando/re5.png`}
               alt="Taco"
               width={350}
               height={350}
@@ -343,7 +344,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", top: "60vh", right: "36vw" }}>
             <Image
-              src="/images/reinventando/re6.png"
+              src={`${basePath}/images/reinventando/re6.png`}
               alt="Taco"
               width={350}
               height={350}
@@ -352,7 +353,7 @@ export default function Page() {
           </div>
           <div style={{ position: "absolute", bottom: "10vh", right: "10vw" }}>
             <Image
-              src="/images/reinventando/re7.png"
+              src={`${basePath}/images/reinventando/re7.png`}
               alt="Taco"
               width={300}
               height={300}
@@ -454,7 +455,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/ASADA.png"
+              src={`${basePath}/images/mesa/ASADA.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -467,7 +468,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/ESPIRO_PAPAS.png"
+              src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -480,7 +481,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/PASTOR.png"
+              src={`${basePath}/images/mesa/PASTOR.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -493,7 +494,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/PASTOR_NEGRO.png"
+              src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -506,7 +507,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/TIJUANITA.png"
+              src={`${basePath}/images/mesa/TIJUANITA.png`}
               alt="Taco"
               width={200}
               height={200}
@@ -519,7 +520,7 @@ export default function Page() {
             setPosition={setPositions}
           >
             <Image
-              src="/images/mesa/VASO.png"
+              src={`${basePath}/images/mesa/VASO.png`}
               alt="Taco"
               width={150}
               height={150}
@@ -528,7 +529,7 @@ export default function Page() {
           </DraggableComponent>
           <div style={{ width: "60%", maxWidth: "100%", maxHeight: "100%" }}>
             <Image
-              src="/images/star.png"
+              src={`${basePath}/images/star.png`}
               alt="Tacos Deliciosos"
               layout="responsive"
               width={20}
