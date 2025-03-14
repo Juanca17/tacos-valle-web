@@ -108,31 +108,14 @@ export default function Page() {
     });
   };
 
-  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsHeaderVisible(scrollTop < 40);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div style={{ overflow: "hidden" }}>
       <header
-        className={`fixed top-0 left-0 w-full py-2 transition-transform duration-300 ${
-          isHeaderVisible
-            ? "transform translate-y-0"
-            : "transform -translate-y-full"
-        }`}
-        style={{ maxHeight: "60px" }}
+        className={`py-4 md:static md:translate-y-0 md:transition-none`}
+        style={{ maxHeight: "60px", background: "#E9471F" }}
       >
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-          <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl">
+          <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl ">
             <a
               href="https://www.instagram.com/tacosdelvalle"
               target="_blank"
@@ -164,16 +147,16 @@ export default function Page() {
 
       <DndContext onDragEnd={handleDragEnd}>
         <section
-          className="w-full h-[100vh] flex items-center justify-center"
+          className="w-full h-[96vh] flex items-center justify-center"
           style={{ background: "#E9471F" }}
         >
-          <div style={{ width: "40%" }}>
-            <Logo className="w-200 h-200" />
+          <div>
+            <Logo className="logo" />
           </div>
         </section>
 
         <section
-          className="relative w-full h-[120vh]"
+          className="relative w-full min-h-[120vh]"
           style={{ background: "#F5ECEA" }}
         >
           <div
@@ -294,7 +277,7 @@ export default function Page() {
         </section>
 
         <section
-          className="relative w-full h-[150vh]"
+          className="relative w-full h-[150vh] mosaic_xl_section"
           style={{ background: "#E9471F" }}
         >
           <div style={{ position: "absolute", top: "100px" }}>
@@ -421,13 +404,10 @@ export default function Page() {
 
         <section
           id="sucursales"
-          className="w-full h-[110vh] flex items-center justify-center"
+          className="w-full min-h-[110vh] flex items-center justify-center"
           style={{ background: "#F5ECEA" }}
         >
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 gap-4 my-24"
-            style={{ width: "80%", color: "#020304", textAlign: "center" }}
-          >
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-24 sucursal_container">
             <Sucursal
               calle="Río Tamazunchale"
               numero={280}

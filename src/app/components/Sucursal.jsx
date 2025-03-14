@@ -5,7 +5,7 @@ import { Button } from "./Button";
 export const Sucursal = (props) => {
   const { calle, numero, linea2, linea3, url } = props;
   return (
-    <div className="p-4" style={{ fontSize: "2.5rem" }}>
+    <div className="p-4 sucursal_componente">
       <p className="font-gt-alpina-bold">
         {calle} <span className="circulo_en_numero">#{numero}</span>
       </p>
@@ -20,7 +20,7 @@ export const Sucursal = (props) => {
       </p>
       <p
         className="font-gt-alpina-bold"
-        style={{ marginTop: "2rem", lineHeight: "2.5rem" }}
+        style={{ marginTop: "3rem", lineHeight: "2.5rem" }}
       >
         Abierto
       </p>
