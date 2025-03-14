@@ -48,19 +48,17 @@ export default function Page() {
   };
   const [positions, setPositions] = useState(initialPositions);
 
-  const [bounds, setBounds] = useState({ maxX: 0, maxY: 0 });
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
 
   useEffect(() => {
-    const updateBounds = () => {
-      setBounds({
-        maxX: window.innerWidth - 20,
-        maxY: window.innerHeight - 20,
-      });
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 800);
     };
 
-    updateBounds();
-    window.addEventListener("resize", updateBounds);
-    return () => window.removeEventListener("resize", updateBounds);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
   useEffect(() => {
@@ -90,19 +88,10 @@ export default function Page() {
     const id = event.active.id; // Identificar qué elemento fue movido
 
     setPositions((prev) => {
-      const newX = Math.min(
-        Math.max(prev[id].x + event.delta.x, 0),
-        bounds.maxX
-      );
-      const newY = Math.min(
-        Math.max(prev[id].y + event.delta.y, 0),
-        bounds.maxY
-      );
+      const newX = Math.max(prev[id].x + event.delta.x, 0);
+      const newY = Math.max(prev[id].y + event.delta.y, 0);
 
       const newPositions = { ...prev, [id]: { x: newX, y: newY } };
-
-      // Guardar posiciones en localStorage
-      localStorage.setItem("draggable-positions", JSON.stringify(newPositions));
 
       return newPositions;
     });
@@ -167,7 +156,7 @@ export default function Page() {
               lineHeight: "3.5rem",
             }}
           >
-            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-24 md:gap-4">
               <div
                 style={{
                   paddingTop: "4rem",
@@ -407,7 +396,7 @@ export default function Page() {
           className="w-full min-h-[110vh] flex items-center justify-center"
           style={{ background: "#F5ECEA" }}
         >
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 my-24 sucursal_container">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 md:gap-4 my-24 sucursal_container">
             <Sucursal
               calle="Río Tamazunchale"
               numero={280}
@@ -437,8 +426,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/ASADA.png`}
               alt="Taco"
-              width={200}
-              height={200}
+              width={isMobile ? 100 : 200}
+              height={isMobile ? 100 : 200}
               className="h-auto w-100"
             />
           </DraggableComponent>
@@ -450,8 +439,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
               alt="Taco"
-              width={200}
-              height={200}
+              width={isMobile ? 100 : 200}
+              height={isMobile ? 100 : 200}
               className="h-auto w-100"
             />
           </DraggableComponent>
@@ -463,8 +452,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/PASTOR.png`}
               alt="Taco"
-              width={200}
-              height={200}
+              width={isMobile ? 100 : 200}
+              height={isMobile ? 100 : 200}
               className="h-auto w-100"
             />
           </DraggableComponent>
@@ -476,8 +465,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
               alt="Taco"
-              width={200}
-              height={200}
+              width={isMobile ? 100 : 200}
+              height={isMobile ? 100 : 200}
               className="h-auto w-100"
             />
           </DraggableComponent>
@@ -489,8 +478,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/TIJUANITA.png`}
               alt="Taco"
-              width={200}
-              height={200}
+              width={isMobile ? 100 : 200}
+              height={isMobile ? 100 : 200}
               className="h-auto w-100"
             />
           </DraggableComponent>
@@ -502,8 +491,8 @@ export default function Page() {
             <Image
               src={`${basePath}/images/mesa/VASO.png`}
               alt="Taco"
-              width={150}
-              height={150}
+              width={isMobile ? 50 : 150}
+              height={isMobile ? 50 : 150}
               className="h-auto w-100"
             />
           </DraggableComponent>

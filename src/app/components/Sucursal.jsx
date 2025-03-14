@@ -20,7 +20,7 @@ export const Sucursal = (props) => {
       </p>
       <p
         className="font-gt-alpina-bold"
-        style={{ marginTop: "3rem", lineHeight: "2.5rem" }}
+        style={{ marginTop: "2rem", lineHeight: "2.5rem" }}
       >
         Abierto
       </p>
