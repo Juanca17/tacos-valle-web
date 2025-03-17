@@ -82,8 +82,8 @@ export default function Page() {
 
       // Ajusta la posición de box3 dentro de la sección "arma-tu-mesa"
       const mobilePositions = {
-        box1: { x: aboutOffsetLeft + 10, y: aboutOffsetTop - 115 },
-        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop - 115 },
+        box1: { x: aboutOffsetLeft + 10, y: aboutOffsetTop },
+        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop },
         box3: { x: offsetLeft + 10, y: offsetTop + 220 },
         box4: { x: offsetLeft + 60, y: offsetTop + 220 },
         box5: { x: offsetLeft + 110, y: offsetTop + 220 },
@@ -92,14 +92,14 @@ export default function Page() {
         box8: { x: offsetLeft + 260, y: offsetTop + 550 },
       };
       const regularPositions = {
-        box1: { x: aboutOffsetLeft, y: aboutOffsetTop - 10 },
-        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop - 10 },
-        box3: { x: offsetLeft + 510, y: offsetTop + 200 },
-        box4: { x: offsetLeft + 710, y: offsetTop + 200 },
-        box5: { x: offsetLeft + 910, y: offsetTop + 200 },
-        box6: { x: offsetLeft + 100, y: offsetTop + 500 },
-        box7: { x: offsetLeft + 310, y: offsetTop + 500 },
-        box8: { x: offsetLeft + 510, y: offsetTop + 500 },
+        box1: { x: aboutOffsetLeft, y: aboutOffsetTop },
+        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop },
+        box3: { x: offsetLeft + 510, y: offsetTop + 150 },
+        box4: { x: offsetLeft + 710, y: offsetTop + 150 },
+        box5: { x: offsetLeft + 910, y: offsetTop + 150 },
+        box6: { x: offsetLeft + 100, y: offsetTop + 400 },
+        box7: { x: offsetLeft + 310, y: offsetTop + 400 },
+        box8: { x: offsetLeft + 510, y: offsetTop + 400 },
       };
       setPositions((prev) => ({
         ...prev,
@@ -134,11 +134,6 @@ export default function Page() {
       });
     }
   };
-  console.log(
-    aboutUsTacosRef?.current?.offsetTop,
-    armaTuMesaRef?.current?.offsetTop,
-    positions
-  );
 
   return (
     <div

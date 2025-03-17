@@ -45,6 +45,7 @@ export default function DraggableComponent({
       onMouseDown={handleDragStart} // Detecta cuando empieza a arrastrarse
       onMouseUp={handleDragEnd}
       style={style}
+      suppressHydrationWarning
     >
       <Image
         src={src}

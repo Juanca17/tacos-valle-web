@@ -6,25 +6,24 @@ export const AboutUs = ({ aboutUsTacosRef }) => {
   return (
     <section
       id="about-us"
-      className="relative w-full min-h-[120vh]"
+      className="relative w-full min-h-[120vh] flex items-center py-16"
       style={{ background: "#F5ECEA" }}
     >
       <div
-        className="text-2xl sm:text-sm md:text-md lg:text-2xl"
+        className="text-2xl sm:text-sm md:text-md lg:text-2xl align-items py-16"
         style={{
-          paddingTop: "5rem",
           color: "#020304",
           lineHeight: "3.5rem",
         }}
       >
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-36 md:gap-4">
-          <div
-            style={{
-              paddingTop: "4rem",
-              paddingLeft: "6rem",
-            }}
-          >
-            <div style={{ width: "15rem" }}>
+          <div className="flex justify-center items-center py-36 md:py-0">
+            <div
+              style={{
+                width: "15rem",
+                marginLeft: "30px",
+              }}
+            >
               <Image
                 src={`${basePath}/images/about-us/botella.png`}
                 alt="Botella"
@@ -38,12 +37,7 @@ export const AboutUs = ({ aboutUsTacosRef }) => {
               />
             </div>
           </div>
-          <div
-            style={{
-              paddingTop: "6rem",
-              textAlign: "center",
-            }}
-          >
+          <div className="flex justify-center items-center text-center py-36 md:py-0">
             <div className="p-2">
               Somos una taquería de <br />
               la vieja escuela con un{" "}
@@ -78,14 +72,12 @@ export const AboutUs = ({ aboutUsTacosRef }) => {
               </span>
             </div>
           </div>
-          <div
-            className="flex flex-col justify-end items-end"
-            style={{
-              paddingTop: "4rem",
-              paddingRight: "6rem",
-            }}
-          >
-            <div style={{ width: "10rem" }}>
+          <div className="flex justify-center items-center py-36 md:py-0">
+            <div
+              style={{
+                width: "10rem",
+              }}
+            >
               <Image
                 src={`${basePath}/images/about-us/limon.png`}
                 alt="Limon"
