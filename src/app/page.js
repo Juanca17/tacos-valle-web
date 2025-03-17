@@ -48,11 +48,15 @@ export default function Page() {
   };
   const [positions, setPositions] = useState(initialPositions);
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 800);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Solo ejecutamos esto en el cliente
+    const checkIsMobile = () => window.innerWidth < 800;
+    setIsMobile(checkIsMobile());
+
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 800);
+      setIsMobile(checkIsMobile());
     };
 
     window.addEventListener("resize", handleResize);
