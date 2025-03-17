@@ -2,9 +2,10 @@ import Image from "next/image";
 import { Button } from "../components/Button";
 import { basePath } from "../config";
 
-export const AboutUs = () => {
+export const AboutUs = ({ aboutUsTacosRef }) => {
   return (
     <section
+      id="about-us"
       className="relative w-full min-h-[120vh]"
       style={{ background: "#F5ECEA" }}
     >
@@ -60,34 +61,15 @@ export const AboutUs = () => {
               </span>{" "}
               <br />
               son los tacos{" "}
-              <span className="inline-flex" style={{ padding: "20px 100px" }}>
-                {/* <DraggableComponent
-                  id="box1"
-                  position={positions.box1}
-                  setPosition={setPositions}
-                >
-                  <Image
-                    src={`${basePath}/images/about-us/taco1.png`}
-                    alt="Taco"
-                    width={100}
-                    height={100}
-                    className="h-auto w-100"
-                  />
-                </DraggableComponent>
-                <DraggableComponent
-                  id="box2"
-                  position={positions.box2}
-                  setPosition={setPositions}
-                >
-                  <Image
-                    src={`${basePath}/images/about-us/taco2.png`}
-                    alt="Taco"
-                    width={100}
-                    height={100}
-                    className="h-auto w-100"
-                  />
-                </DraggableComponent> */}
-              </span>
+              <span
+                id="tacos-span"
+                className="inline-flex"
+                ref={aboutUsTacosRef}
+                style={{
+                  display: "absolute",
+                  padding: "20px 100px",
+                }}
+              ></span>
               , <br />
               pero nos gusta{" "}
               <span className="font-gt-alpina-bold">
