@@ -26,24 +26,24 @@ export default function Page() {
       y: 0,
     },
     box4: {
-      x: 1075.5,
-      y: 413.1000980351563,
+      x: 0,
+      y: 0,
     },
     box5: {
-      x: 1075.5,
-      y: 413.1000980351563,
+      x: 0,
+      y: 0,
     },
     box6: {
-      x: 1075.5,
-      y: 413.1000980351563,
+      x: 0,
+      y: 0,
     },
     box7: {
-      x: 1075.5,
-      y: 413.1000980351563,
+      x: 0,
+      y: 0,
     },
     box8: {
-      x: 1075.5,
-      y: 413.1000980351563,
+      x: 0,
+      y: 0,
     },
   };
   const [positions, setPositions] = useState(initialPositions);
@@ -88,17 +88,34 @@ export default function Page() {
   // }, []);
 
   useEffect(() => {
-    if (armaTuMesaRef.current) {
+    if (armaTuMesaRef.current && !isPositionsLoaded) {
+      const windowIsMobile = window.innerWidth < 800;
       const { offsetTop, offsetLeft } = armaTuMesaRef.current;
 
       // Ajusta la posición de box3 dentro de la sección "arma-tu-mesa"
+      const mobilePositions = {
+        box3: { x: offsetLeft + 10, y: offsetTop + 220 },
+        box4: { x: offsetLeft + 60, y: offsetTop + 220 },
+        box5: { x: offsetLeft + 110, y: offsetTop + 220 },
+        box6: { x: offsetLeft + 160, y: offsetTop + 550 },
+        box7: { x: offsetLeft + 210, y: offsetTop + 550 },
+        box8: { x: offsetLeft + 260, y: offsetTop + 550 },
+      };
+      const regularPositions = {
+        box3: { x: offsetLeft + 510, y: offsetTop + 200 },
+        box4: { x: offsetLeft + 710, y: offsetTop + 200 },
+        box5: { x: offsetLeft + 910, y: offsetTop + 200 },
+        box6: { x: offsetLeft + 100, y: offsetTop + 500 },
+        box7: { x: offsetLeft + 310, y: offsetTop + 500 },
+        box8: { x: offsetLeft + 510, y: offsetTop + 500 },
+      };
       setPositions((prev) => ({
         ...prev,
-        box3: { x: offsetLeft + 10, y: offsetTop + 10 }, // Margen de 50px dentro de la sección
+        ...(windowIsMobile ? mobilePositions : regularPositions),
       }));
       setIsPositionsLoaded(true);
     }
-  }, []);
+  }, [isPositionsLoaded]);
 
   const handleDragEnd = (event) => {
     const { delta, active } = event;
@@ -145,9 +162,54 @@ export default function Page() {
           id="box3"
           position={positions.box3}
           src={`${basePath}/images/mesa/ASADA.png`}
-          alt="Taco"
+          alt="Taco de asada"
           width={isMobile ? 80 : 150}
           height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box4"
+          position={positions.box4}
+          src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
+          alt="Espiro-papas"
+          width={isMobile ? 80 : 150}
+          height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box5"
+          position={positions.box5}
+          src={`${basePath}/images/mesa/PASTOR.png`}
+          alt="Pastor"
+          width={isMobile ? 80 : 150}
+          height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box6"
+          position={positions.box6}
+          src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
+          alt="Pastor negro"
+          width={isMobile ? 80 : 150}
+          height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box7"
+          position={positions.box7}
+          src={`${basePath}/images/mesa/TIJUANITA.png`}
+          alt="Pastor negro"
+          width={isMobile ? 80 : 150}
+          height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box8"
+          position={positions.box8}
+          src={`${basePath}/images/mesa/VASO.png`}
+          alt="Pastor negro"
+          width={isMobile ? 50 : 120}
+          height={isMobile ? 50 : 120}
           visible={isPositionsLoaded}
         />
         <section
