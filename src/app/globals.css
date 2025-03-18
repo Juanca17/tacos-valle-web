@@ -222,3 +222,7 @@ body {
     width: 100%;
   }
 }
+
+.logo-animated {
+  overflow: visible;
+}

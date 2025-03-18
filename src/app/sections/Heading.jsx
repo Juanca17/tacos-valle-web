@@ -1,5 +1,5 @@
 import { Button } from "../components/Button";
-import Logo from "../components/Logo";
+import LogoAnimated from "../components/LogoAnimated";
 
 export const Heading = () => {
   return (
@@ -44,7 +44,7 @@ export const Heading = () => {
         style={{ background: "#E9471F" }}
       >
         <div>
-          <Logo className="logo" />
+          <LogoAnimated className="logo" />
         </div>
       </section>
     </>
