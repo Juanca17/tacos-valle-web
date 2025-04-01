@@ -1,30 +1,49 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { basePath } from "../config";
 import { Button } from "../components/Button";
+import { AnimatedImage } from "../components/AnimatedImage";
+
+const leftImages = ["menu1.jpg", "menu3.png", "menu5.jpg"];
+const rightImages = ["menu2.jpg", "menu4.jpg", "menu6.jpg"];
 
 export const Menu = () => {
+  const [leftIndex, setLeftIndex] = useState(0);
+  const [rightIndex, setRightIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTimeout(() => {
+        setLeftIndex((prev) => (prev + 1) % leftImages.length);
+        setRightIndex((prev) => (prev + 1) % rightImages.length);
+      }, 400); // Animación dura 400ms
+    }, 3500); // Cada 3.5 segundos
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       className="w-full h-screen overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
-      {/* Fondo Izquierdo (arriba en mobile) */}
-      <div className="relative w-full h-1/2 md:w-1/2 md:h-full">
-        <Image
-          src={`${basePath}/images/menu/menu1.jpg`}
-          alt="Fondo Izquierdo"
-          fill
-          className="object-cover"
+      {/* Imagen Izquierda (arriba en mobile) */}
+      <div className="relative w-full h-1/2 md:w-1/2 md:h-full overflow-hidden">
+        <AnimatedImage
+          src={`${basePath}/images/menu/${leftImages[leftIndex]}`}
+          alt="Imagen Izquierda"
+          direction="left"
         />
       </div>
 
-      {/* Fondo Derecho (abajo en mobile) */}
-      <div className="relative w-full h-1/2 md:w-1/2 md:h-full">
-        <Image
-          src={`${basePath}/images/menu/menu2.jpg`}
-          alt="Fondo Derecho"
-          fill
-          className="object-cover"
+      {/* Imagen Derecha (abajo en mobile) */}
+      <div className="relative w-full h-1/2 md:w-1/2 md:h-full overflow-hidden">
+        <AnimatedImage
+          src={`${basePath}/images/menu/${rightImages[rightIndex]}`}
+          alt="Imagen Derecha"
+          direction="right"
         />
       </div>
 

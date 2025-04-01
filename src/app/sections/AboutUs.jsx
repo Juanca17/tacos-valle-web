@@ -1,7 +1,53 @@
 import Image from "next/image";
 import { basePath } from "../config";
 
-export const AboutUs = () => {
+export const AboutUs = ({ isMobile }) => {
+  if (isMobile) {
+    return (
+      <section
+        id="about-us"
+        className="w-full h-[100vh] flex justify-center relative"
+        style={{ background: "#FDD93D" }}
+      >
+        <Image
+          src={`${basePath}/images/about-us/notebook.png`}
+          alt="Bloc de notas"
+          fill
+          className="no_selector"
+          style={{
+            objectFit: "contain",
+            zIndex: 0,
+            minHeight: "200px",
+          }}
+        />
+        <div
+          className="text-sm flex justify-center relative z-10"
+          style={{
+            color: "#020304",
+            width: "60vw",
+            textAlign: "center",
+            marginTop: "40vh",
+          }}
+        >
+          <div style={{ width: "100%" }}>
+            <p className="font-jean-luc-thin" style={{ fontSize: "2rem" }}>
+              TACOS DEL VALLE
+            </p>
+            <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
+              se enorgullece de ser una taquería que combina lo mejor de la
+              tradición con un{" "}
+              <span className="font-gt-alpina-bold">toque moderno.</span>
+            </p>
+            <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
+              Lista para conquistar a todos los amantes de los tacos buenos,
+              ricos, enchiladas y más.
+            </p>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section
       id="about-us"
@@ -67,7 +113,6 @@ export const AboutUs = () => {
           className="no_selector"
           style={{
             objectFit: "contain",
-            transform: "scaleX(-1)",
             zIndex: 15,
           }}
         />

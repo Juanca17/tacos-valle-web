@@ -135,7 +135,7 @@ export default function Page() {
     >
       <DndContext onDragEnd={handleDragEnd}>
         <Heading />
-        <AboutUs />
+        <AboutUs isMobile={isMobile} />
         <MarqueeOrange />
         <Menu />
         <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
