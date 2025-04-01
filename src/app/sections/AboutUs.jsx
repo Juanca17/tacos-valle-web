@@ -44,6 +44,34 @@ export const AboutUs = () => {
           </p>
         </div>
       </div>
+      <div style={{ position: "absolute", top: "10rem", left: "18rem" }}>
+        <Image
+          src={`${basePath}/images/about-us/botella.png`}
+          alt="Botella"
+          width={160}
+          height={160}
+          className="no_selector"
+          style={{
+            objectFit: "contain",
+            transform: "rotate(10deg)",
+            zIndex: 15,
+          }}
+        />
+      </div>
+      <div style={{ position: "absolute", bottom: "-15px", right: "16rem" }}>
+        <Image
+          src={`${basePath}/images/about-us/limon.png`}
+          alt="Limón"
+          width={160}
+          height={160}
+          className="no_selector"
+          style={{
+            objectFit: "contain",
+            transform: "scaleX(-1)",
+            zIndex: 15,
+          }}
+        />
+      </div>
     </section>
   );
 };
