@@ -43,7 +43,7 @@ export const Heading = () => {
     <>
       <header
         className="w-full h-screen flex items-center justify-center"
-        style={{ background: "#E9471F" }}
+        style={{ background: "#FF4200" }}
       >
         <div className="flex flex-col items-center justify-center space-y-4">
           <LogoAnimated className="logo" />

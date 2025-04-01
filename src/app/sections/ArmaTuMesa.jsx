@@ -6,7 +6,7 @@ export const ArmaTuMesa = ({ armaTuMesaRef }) => {
     <section
       id="arma-tu-mesa"
       className="relative w-full h-[110vh] flex items-center justify-center"
-      style={{ background: "#E9471F" }}
+      style={{ background: "#FF4200" }}
       ref={armaTuMesaRef}
     >
       <div style={{ width: "60%", maxWidth: "100%", maxHeight: "100%" }}>

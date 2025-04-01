@@ -1,96 +1,47 @@
 import Image from "next/image";
-import { Button } from "../components/Button";
 import { basePath } from "../config";
 
-export const AboutUs = ({ aboutUsTacosRef }) => {
+export const AboutUs = () => {
   return (
     <section
       id="about-us"
-      className="relative w-full min-h-[120vh] flex items-center py-16"
-      style={{ background: "#F5ECEA" }}
+      className="w-full h-[120vh] flex justify-center relative"
+      style={{ background: "#FDD93D" }}
     >
+      <Image
+        src={`${basePath}/images/about-us/notebook.png`}
+        alt="Bloc de notas"
+        fill
+        className="no_selector"
+        style={{
+          marginTop: "3rem",
+          objectFit: "contain",
+          zIndex: 0,
+        }}
+      />
       <div
-        className="text-2xl sm:text-sm md:text-md lg:text-2xl align-items py-16"
+        className="text-2xl sm:text-sm md:text-md lg:text-2xl py-16 flex justify-center relative z-10"
         style={{
           color: "#020304",
           lineHeight: "3.5rem",
+          width: "60vw",
+          textAlign: "center",
+          marginTop: "10rem",
         }}
       >
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr_1fr] gap-36 md:gap-4">
-          <div className="flex justify-center items-center py-36 md:py-0">
-            <div
-              style={{
-                width: "15rem",
-                marginLeft: "30px",
-              }}
-            >
-              <Image
-                src={`${basePath}/images/about-us/botella.png`}
-                alt="Botella"
-                layout="responsive"
-                width={20}
-                height={50}
-                className="no_selector"
-                style={{
-                  transform: "rotate(10deg)",
-                }}
-              />
-            </div>
-          </div>
-          <div className="flex justify-center items-center text-center py-36 md:py-0">
-            <div className="p-2">
-              Somos una taquería de <br />
-              la vieja escuela con un{" "}
-              <span className="font-gt-alpina-bold">toque moderno.</span>
-              <br />
-              Lo más importante de nuestro{" "}
-              <span>
-                <a
-                  href="https://drive.google.com/file/d/161W8El6JeQlMk8Md-xxvyFn85FI1cNm-/view?usp=sharing"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Button label="Menú" isOrange />
-                </a>
-              </span>{" "}
-              <br />
-              son los tacos{" "}
-              <span
-                id="tacos-span"
-                className="inline-flex"
-                ref={aboutUsTacosRef}
-                style={{
-                  display: "absolute",
-                  padding: "20px 100px",
-                }}
-              ></span>
-              , <br />
-              pero nos gusta{" "}
-              <span className="font-gt-alpina-bold">
-                mezclar sabores,
-                <br /> texturas y jugar con lo típico
-              </span>
-            </div>
-          </div>
-          <div className="flex justify-center items-center py-36 md:py-0">
-            <div
-              style={{
-                width: "10rem",
-              }}
-            >
-              <Image
-                src={`${basePath}/images/about-us/limon.png`}
-                alt="Limon"
-                layout="responsive"
-                width={20}
-                height={50}
-                className="no_selector"
-                style={{
-                  transform: "scaleX(-1)",
-                }}
-              />
-            </div>
-          </div>
+        <div style={{ width: "60%" }}>
+          <p className="font-jean-luc-thin" style={{ fontSize: "4rem" }}>
+            TACOS DEL VALLE
+          </p>
+          <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
+            se enorgullece de ser una taquería que combina lo mejor de la
+            tradición con un{" "}
+            <span className="font-gt-alpina-bold">toque moderno.</span>
+          </p>
+          <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
+            Lista para conquistar a todos los amantes de los tacos buenos,
+            ricos, enchiladas y más.
+          </p>
         </div>
       </div>
     </section>

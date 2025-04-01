@@ -5,7 +5,7 @@ export const Sucursales = () => {
     <section
       id="sucursales"
       className="w-full min-h-[110vh] flex items-center justify-center py-8"
-      style={{ background: "#F5ECEA" }}
+      style={{ background: "#FDD93D" }}
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 md:gap-4 my-24 sucursal_container">
         <Sucursal

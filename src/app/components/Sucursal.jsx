@@ -57,7 +57,7 @@ export const Sucursal = (props) => {
         rel="noopener noreferrer"
         className="font-gt-alpina-bold text_button"
       >
-        <Button label="Ubicación" isOrange />
+        <Button label="Mapa" />
       </a>
     </div>
   );

@@ -6,12 +6,13 @@ import DraggableComponent from "./components/DraggableComponent";
 import { basePath } from "./config";
 import { Sucursales } from "./sections/Sucursales";
 import { Heading } from "./sections/Heading";
-import { AboutUs } from "./sections/AboutUs";
-import { Mosaic } from "./sections/Mosaic";
 import { ArmaTuMesa } from "./sections/ArmaTuMesa";
+import { AboutUs } from "./sections/AboutUs";
+import { MarqueeOrange } from "./sections/MarqueeOrange";
+import { MarqueeWhite } from "./sections/MarqueeWhite";
+import { Menu } from "./sections/Menu";
 
 export default function Page() {
-  const aboutUsTacosRef = useRef(null);
   const armaTuMesaRef = useRef(null);
   const initialPositions = {
     box1: {
@@ -68,22 +69,12 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (
-      aboutUsTacosRef.current &&
-      armaTuMesaRef.current &&
-      !isPositionsLoaded
-    ) {
+    if (armaTuMesaRef.current && !isPositionsLoaded) {
       const windowIsMobile = window.innerWidth < 800;
-      const aboutOffsetTop =
-        aboutUsTacosRef?.current?.offsetParent?.offsetTop +
-        aboutUsTacosRef?.current?.offsetTop;
-      const { offsetLeft: aboutOffsetLeft } = aboutUsTacosRef.current;
       const { offsetTop, offsetLeft } = armaTuMesaRef.current;
 
       // Ajusta la posición de box3 dentro de la sección "arma-tu-mesa"
       const mobilePositions = {
-        box1: { x: aboutOffsetLeft + 10, y: aboutOffsetTop },
-        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop },
         box3: { x: offsetLeft + 10, y: offsetTop + 220 },
         box4: { x: offsetLeft + 60, y: offsetTop + 220 },
         box5: { x: offsetLeft + 110, y: offsetTop + 220 },
@@ -92,14 +83,12 @@ export default function Page() {
         box8: { x: offsetLeft + 260, y: offsetTop + 550 },
       };
       const regularPositions = {
-        box1: { x: aboutOffsetLeft, y: aboutOffsetTop },
-        box2: { x: aboutOffsetLeft + 100, y: aboutOffsetTop },
-        box3: { x: offsetLeft + 510, y: offsetTop + 150 },
+        box3: { x: offsetLeft + 410, y: offsetTop + 100 },
         box4: { x: offsetLeft + 710, y: offsetTop + 150 },
-        box5: { x: offsetLeft + 910, y: offsetTop + 150 },
-        box6: { x: offsetLeft + 100, y: offsetTop + 400 },
-        box7: { x: offsetLeft + 310, y: offsetTop + 400 },
-        box8: { x: offsetLeft + 510, y: offsetTop + 400 },
+        box5: { x: offsetLeft + 1010, y: offsetTop + 150 },
+        box6: { x: offsetLeft + 100, y: offsetTop + 350 },
+        box7: { x: offsetLeft + 410, y: offsetTop + 400 },
+        box8: { x: offsetLeft + 810, y: offsetTop + 420 },
       };
       setPositions((prev) => ({
         ...prev,
@@ -107,7 +96,7 @@ export default function Page() {
       }));
       setIsPositionsLoaded(true);
     }
-  }, [aboutUsTacosRef, armaTuMesaRef, isPositionsLoaded]);
+  }, [armaTuMesaRef, isPositionsLoaded]);
 
   const handleDragEnd = (event) => {
     const { delta, active } = event;
@@ -146,40 +135,20 @@ export default function Page() {
     >
       <DndContext onDragEnd={handleDragEnd}>
         <Heading />
-        <AboutUs
-          aboutUsTacosRef={aboutUsTacosRef}
-          isMobile={isMobile}
-          setPositions={setPositions}
-        />
-        <Mosaic />
+        <AboutUs />
+        <MarqueeOrange />
+        <Menu />
+        <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
+        <MarqueeWhite />
         <Sucursales />
-
-        <DraggableComponent
-          id="box1"
-          position={positions.box1}
-          src={`${basePath}/images/about-us/taco1.png`}
-          alt="Taco"
-          width={isMobile ? 80 : 100}
-          height={isMobile ? 80 : 100}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box2"
-          position={positions.box2}
-          src={`${basePath}/images/about-us/taco2.png`}
-          alt="Taco"
-          width={isMobile ? 80 : 100}
-          height={isMobile ? 80 : 100}
-          visible={isPositionsLoaded}
-        />
 
         <DraggableComponent
           id="box3"
           position={positions.box3}
           src={`${basePath}/images/mesa/ASADA.png`}
           alt="Taco de asada"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
+          width={isMobile ? 80 : 250}
+          height={isMobile ? 80 : 250}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -187,8 +156,8 @@ export default function Page() {
           position={positions.box4}
           src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
           alt="Espiro-papas"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
+          width={isMobile ? 80 : 250}
+          height={isMobile ? 80 : 250}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -196,8 +165,8 @@ export default function Page() {
           position={positions.box5}
           src={`${basePath}/images/mesa/PASTOR.png`}
           alt="Pastor"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
+          width={isMobile ? 80 : 250}
+          height={isMobile ? 80 : 250}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -205,8 +174,8 @@ export default function Page() {
           position={positions.box6}
           src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
           alt="Pastor negro"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
+          width={isMobile ? 80 : 250}
+          height={isMobile ? 80 : 250}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -214,8 +183,8 @@ export default function Page() {
           position={positions.box7}
           src={`${basePath}/images/mesa/TIJUANITA.png`}
           alt="Pastor negro"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
+          width={isMobile ? 80 : 250}
+          height={isMobile ? 80 : 250}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -227,7 +196,6 @@ export default function Page() {
           height={isMobile ? 50 : 120}
           visible={isPositionsLoaded}
         />
-        <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
       </DndContext>
 
       <footer className="bg-[#020304] py-4 px-6 text-center">
