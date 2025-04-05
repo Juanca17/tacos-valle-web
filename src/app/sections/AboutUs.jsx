@@ -70,7 +70,7 @@ export const AboutUs = ({ isMobile }) => {
         </div>
         <div
           className="w-full flex items-center justify-center"
-          style={{ marginTop: "11vh", height: "200px" }}
+          style={{ marginTop: "9vh", height: "200px" }}
         >
           <div
             style={{
