@@ -14,7 +14,7 @@
   }
 }
 
-/* @font-face {
+@font-face {
   font-family: "GTAlpinaBold";
   src: url("/tacos-valle-web/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf")
     format("truetype");
@@ -79,10 +79,10 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-} */
+}
 
 /** Local **/
-@font-face {
+/* @font-face {
   font-family: "GTAlpinaBold";
   src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf") format("truetype");
   font-weight: bold;
@@ -144,7 +144,7 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 @layer utilities {
   @keyframes slideDown {
