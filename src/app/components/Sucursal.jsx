@@ -5,7 +5,7 @@ import { Button } from "./Button";
 export const Sucursal = (props) => {
   const { calle, numero, linea2, linea3, url } = props;
   return (
-    <div className="px-4 py-36 md:py-0 sucursal_componente">
+    <div className="lg:my-16 px-4 py-36 md:py-0 sucursal_componente">
       <p className="font-gt-alpina-bold">
         {calle} <span className="circulo_en_numero">#{numero}</span>
       </p>

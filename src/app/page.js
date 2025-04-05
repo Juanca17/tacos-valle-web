@@ -76,11 +76,11 @@ export default function Page() {
       // Ajusta la posición de box3 dentro de la sección "arma-tu-mesa"
       const mobilePositions = {
         box3: { x: offsetLeft + 10, y: offsetTop + 220 },
-        box4: { x: offsetLeft + 60, y: offsetTop + 220 },
-        box5: { x: offsetLeft + 110, y: offsetTop + 220 },
-        box6: { x: offsetLeft + 160, y: offsetTop + 550 },
-        box7: { x: offsetLeft + 210, y: offsetTop + 550 },
-        box8: { x: offsetLeft + 260, y: offsetTop + 550 },
+        box4: { x: offsetLeft + 100, y: offsetTop + 290 },
+        box5: { x: offsetLeft + 210, y: offsetTop + 220 },
+        box6: { x: offsetLeft + 20, y: offsetTop + 450 },
+        box7: { x: offsetLeft + 120, y: offsetTop + 380 },
+        box8: { x: offsetLeft + 280, y: offsetTop + 450 },
       };
       const regularPositions = {
         box3: { x: offsetLeft + 410, y: offsetTop + 100 },
