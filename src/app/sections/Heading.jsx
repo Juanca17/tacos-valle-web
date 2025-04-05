@@ -7,7 +7,7 @@ const HeadingButtons = () => {
       className="grid grid-cols-1 lg:grid-cols-3 gap-2"
       style={{ marginTop: "150px", width: "90vw" }}
     >
-      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl ">
+      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl my-2">
         <a
           href="https://www.instagram.com/tacosdelvalle"
           target="_blank"
@@ -17,7 +17,7 @@ const HeadingButtons = () => {
           <Button label="Contacto" />
         </a>
       </div>
-      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl">
+      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl my-2">
         <a
           href="https://drive.google.com/file/d/161W8El6JeQlMk8Md-xxvyFn85FI1cNm-/view?usp=sharing"
           target="_blank"
@@ -26,7 +26,7 @@ const HeadingButtons = () => {
           <Button label="Menú" />
         </a>
       </div>
-      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl">
+      <div className="flex justify-center items-center text-2xl sm:text-sm md:text-xl lg:text-2xl my-2">
         <a
           href="#sucursales"
           className="flex items-center font-gt-alpina-bold text_button_white"
