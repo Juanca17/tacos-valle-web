@@ -14,7 +14,7 @@ export const MarqueeOrange = () => {
             {repeatedWords.map((text, index) => (
               <span
                 key={`${i}-${index}`}
-                className="font-jean-luc-thin text-[2.5rem] sm:text-[4rem] mx-8 inline-block"
+                className="font-jean-luc-thin text-[2.5rem] sm:text-[4rem] mx-8 inline-block text-white"
               >
                 {text}
               </span>
