@@ -51,15 +51,15 @@ export const AboutUs = ({ isMobile }) => {
             }}
           >
             <div style={{ width: "100%" }}>
-              <p className="font-jean-luc-thin" style={{ fontSize: "3rem" }}>
+              <p className="font-jean-luc-thin" style={{ fontSize: "2rem" }}>
                 TACOS DEL VALLE
               </p>
-              <p className="font-simplon-bp-mono" style={{ marginTop: "3rem" }}>
+              <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
                 se enorgullece de ser una taquería que combina lo mejor de la
                 tradición con un{" "}
                 <span className="font-gt-alpina-bold">toque moderno.</span>
               </p>
-              <p className="font-simplon-bp-mono" style={{ marginTop: "3rem" }}>
+              <p className="font-simplon-bp-mono" style={{ marginTop: "2rem" }}>
                 Lista para conquistar a todos los amantes de los{" "}
                 <span className="font-gt-alpina-bold" id="tacos">
                   tacos buenos, ricos, enchiladas y más.
@@ -107,7 +107,7 @@ export const AboutUs = ({ isMobile }) => {
         }}
       />
       <div
-        className="text-2xl sm:text-sm md:text-md lg:text-2xl py-16 flex justify-center relative z-10"
+        className="text-3xl sm:text-sm md:text-md lg:text-3xl py-16 flex justify-center relative z-10"
         style={{
           color: "#020304",
           lineHeight: "3.5rem",
