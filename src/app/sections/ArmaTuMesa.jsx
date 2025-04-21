@@ -21,7 +21,7 @@ export const ArmaTuMesa = ({ armaTuMesaRef }) => {
         />
       </div>
       <div
-        className="no_selector text-white font-jean-luc-thin text-4xl sm:text-6xl md:text-8xl lg:text-10xl"
+        className="no_selector text-white font-jean-luc-thin text-4xl sm:text-6xl md:text-8xl lg:text-[7rem]"
         style={{
           zIndex: 100,
           position: "absolute",
@@ -32,7 +32,7 @@ export const ArmaTuMesa = ({ armaTuMesaRef }) => {
         Arma
       </div>
       <div
-        className="no_selector text-white font-jean-luc-thin text-4xl sm:text-6xl md:text-8xl lg:text-10xl"
+        className="no_selector text-white font-jean-luc-thin text-4xl sm:text-6xl md:text-8xl lg:text-[7rem]"
         style={{
           zIndex: 100,
           position: "absolute",

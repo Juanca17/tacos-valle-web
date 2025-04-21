@@ -85,11 +85,11 @@ export default function Page() {
       };
       const regularPositions = {
         box3: { x: offsetLeft + 410, y: offsetTop + 100 },
-        box4: { x: offsetLeft + 710, y: offsetTop + 150 },
+        box4: { x: offsetLeft + 710, y: offsetTop + 50 },
         box5: { x: offsetLeft + 1010, y: offsetTop + 150 },
         box6: { x: offsetLeft + 100, y: offsetTop + 350 },
-        box7: { x: offsetLeft + 410, y: offsetTop + 300 },
-        box8: { x: offsetLeft + 810, y: offsetTop + 420 },
+        box7: { x: offsetLeft + 410, y: offsetTop + 400 },
+        box8: { x: offsetLeft + 810, y: offsetTop + 370 },
       };
       setPositions((prev) => ({
         ...prev,
@@ -149,8 +149,8 @@ export default function Page() {
           position={positions.box3}
           src={`${basePath}/images/mesa/ASADA.png`}
           alt="Taco de asada"
-          width={isMobile ? 150 : 250}
-          height={isMobile ? 150 : 250}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -158,8 +158,8 @@ export default function Page() {
           position={positions.box4}
           src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
           alt="Espiro-papas"
-          width={isMobile ? 150 : 250}
-          height={isMobile ? 150 : 250}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -167,8 +167,8 @@ export default function Page() {
           position={positions.box5}
           src={`${basePath}/images/mesa/PASTOR.png`}
           alt="Pastor"
-          width={isMobile ? 150 : 250}
-          height={isMobile ? 150 : 250}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -176,8 +176,8 @@ export default function Page() {
           position={positions.box6}
           src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
           alt="Pastor negro"
-          width={isMobile ? 150 : 250}
-          height={isMobile ? 150 : 250}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -185,8 +185,8 @@ export default function Page() {
           position={positions.box7}
           src={`${basePath}/images/mesa/TIJUANITA.png`}
           alt="Pastor negro"
-          width={isMobile ? 150 : 250}
-          height={isMobile ? 150 : 250}
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
         />
         <DraggableComponent
@@ -194,8 +194,8 @@ export default function Page() {
           position={positions.box8}
           src={`${basePath}/images/mesa/VASO.png`}
           alt="Pastor negro"
-          width={isMobile ? 80 : 120}
-          height={isMobile ? 80 : 120}
+          width={isMobile ? 80 : 180}
+          height={isMobile ? 80 : 180}
           visible={isPositionsLoaded}
         />
       </DndContext>
