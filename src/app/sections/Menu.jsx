@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { basePath } from "../config";
 import { Button } from "../components/Button";
 import { AnimatedImage } from "../components/AnimatedImage";
 
-const leftImages = ["menu1.jpg", "menu3.png", "menu5.jpg"];
-const rightImages = ["menu2.jpg", "menu4.jpg", "menu6.jpg"];
+const leftImages = ["m1.jpg", "m3.jpg", "m5.jpg"];
+const rightImages = ["m2.jpg", "m4.jpg", "m6.jpg"];
 
 export const Menu = () => {
   const [leftIndex, setLeftIndex] = useState(0);
