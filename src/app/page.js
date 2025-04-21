@@ -89,7 +89,7 @@ export default function Page() {
         box5: { x: offsetLeft + 1010, y: offsetTop + 150 },
         box6: { x: offsetLeft + 100, y: offsetTop + 350 },
         box7: { x: offsetLeft + 410, y: offsetTop + 400 },
-        box8: { x: offsetLeft + 810, y: offsetTop + 370 },
+        box8: { x: offsetLeft + 760, y: offsetTop + 370 },
       };
       setPositions((prev) => ({
         ...prev,
