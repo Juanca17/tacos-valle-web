@@ -15,6 +15,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -26,6 +27,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -41,6 +43,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -52,6 +55,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -67,6 +71,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -78,6 +83,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -89,6 +95,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -100,6 +107,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -111,6 +119,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -122,6 +131,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <path
@@ -133,6 +143,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -144,6 +155,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
@@ -155,6 +167,7 @@ const Logo = ({ className = "w-20 h-20" }) => (
       fill="#fff"
       className="logo_letter"
       whileHover={{ y: -50 }}
+      whileTap={{ y: -50 }}
       transition={{ type: "spring", stiffness: 300 }}
     >
       <polygon
