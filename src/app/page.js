@@ -4,13 +4,14 @@ import React, { useEffect, useRef, useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import DraggableComponent from "./components/DraggableComponent";
 import { basePath } from "./config";
-import { Sucursales } from "./sections/Sucursales";
+// import { Sucursales } from "./sections/Sucursales";
 import { Heading } from "./sections/Heading";
 import { ArmaTuMesa } from "./sections/ArmaTuMesa";
 import { AboutUs } from "./sections/AboutUs";
 import { MarqueeOrange } from "./sections/MarqueeOrange";
 import { MarqueeWhite } from "./sections/MarqueeWhite";
 import { Menu } from "./sections/Menu";
+import { SucursalesMotion } from "./sections/SucursalesMotion";
 
 export default function Page() {
   const armaTuMesaRef = useRef(null);
@@ -140,7 +141,7 @@ export default function Page() {
         <Menu />
         <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
         <MarqueeWhite />
-        <Sucursales />
+        <SucursalesMotion />
 
         <DraggableComponent
           id="box3"
