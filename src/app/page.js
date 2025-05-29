@@ -11,7 +11,6 @@ import { AboutUs } from "./sections/AboutUs";
 import { MarqueeOrange } from "./sections/MarqueeOrange";
 import { MarqueeWhite } from "./sections/MarqueeWhite";
 import { Menu } from "./sections/Menu";
-import { Sucursales2 } from "./sections/Sucursales2";
 
 export default function Page() {
   const armaTuMesaRef = useRef(null);
@@ -141,8 +140,7 @@ export default function Page() {
         <Menu />
         <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
         <MarqueeWhite />
-        {/* <Sucursales /> */}
-        <Sucursales2 />
+        <Sucursales />
 
         <DraggableComponent
           id="box3"
