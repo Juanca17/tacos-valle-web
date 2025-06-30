@@ -33,7 +33,7 @@ const SUCURSALES_INFO = [
     colonia: "ROMA NORTE",
     cp: "06700",
     ciudad: "CDMX",
-    link: "https://maps.app.goo.gl/fQksFWxN15tDdeoL9",
+    link: "https://maps.app.goo.gl/cQz7L489LWN8R5NP8",
   },
 ];
 
