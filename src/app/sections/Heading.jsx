@@ -47,7 +47,6 @@ export const Heading = () => {
       >
         <div className="flex flex-col items-center justify-center space-y-4">
           <LogoAnimated className="logo" />
-          <HeadingButtons />
         </div>
       </header>
     </>

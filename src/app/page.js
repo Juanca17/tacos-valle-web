@@ -4,18 +4,36 @@ import React, { useEffect, useRef, useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import DraggableComponent from "./components/DraggableComponent";
 import { basePath } from "./config";
-// import { Sucursales } from "./sections/Sucursales";
-import { Heading } from "./sections/Heading";
-import { ArmaTuMesa } from "./sections/ArmaTuMesa";
-import { AboutUs } from "./sections/AboutUs";
-import { MarqueeOrange } from "./sections/MarqueeOrange";
-import { MarqueeWhite } from "./sections/MarqueeWhite";
-import { Menu } from "./sections/Menu";
-import { SucursalesMotion } from "./sections/SucursalesMotion";
+import { Heading2 } from "./sections/Heading2";
+import { Tagline } from "./sections/Tagline";
+import { Sucursales2 } from "./sections/Sucursales2";
+import { SeComeRico } from "./sections/SeComeRico";
+import { TacosTacosTacos } from "./sections/TacosTacosTacos";
+import { Links } from "./sections/Links";
+import { CerroSilla } from "./sections/CerroSilla";
+import { MarqueeWhite2 } from "./sections/MarqueeWhite2";
+import { GlobalFrame } from "./sections/GlobalFrame";
 
 export default function Page() {
+  const taglineRef = useRef(null);
   const armaTuMesaRef = useRef(null);
   const initialPositions = {
+    tagline1: {
+      x: 0,
+      y: 0,
+    },
+    tagline2: {
+      x: 0,
+      y: 0,
+    },
+    tagline3: {
+      x: 0,
+      y: 0,
+    },
+    tagline4: {
+      x: 0,
+      y: 0,
+    },
     box1: {
       x: 0,
       y: 0,
@@ -51,12 +69,14 @@ export default function Page() {
   };
   const [positions, setPositions] = useState(initialPositions);
   const [isPositionsLoaded, setIsPositionsLoaded] = useState(false);
+  const [isTagLinePositionsLoaded, setIsTaglinePositionsLoaded] =
+    useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     // Solo ejecutamos esto en el cliente
-    const checkIsMobile = () => window.innerWidth < 800;
+    const checkIsMobile = () => window.innerWidth < 640;
     setIsMobile(checkIsMobile());
 
     const handleResize = () => {
@@ -70,26 +90,52 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
+    if (taglineRef.current && !isTagLinePositionsLoaded) {
+      const windowIsMobile = window.innerWidth < 800;
+      const { offsetTop, offsetLeft } = taglineRef.current;
+
+      const mobilePositions = {
+        tagline1: { x: offsetLeft + 30, y: offsetTop + 189 },
+        tagline2: { x: offsetLeft + 217, y: offsetTop + 364 },
+        tagline3: { x: offsetLeft + 206, y: offsetTop + 197 },
+        tagline4: { x: offsetLeft + 59, y: offsetTop + 351 },
+      };
+      const regularPositions = {
+        tagline1: { x: offsetLeft + 10, y: offsetTop + 250 },
+        tagline2: { x: offsetLeft + 350, y: offsetTop + 270 },
+        tagline3: { x: offsetLeft + 700, y: offsetTop + 250 },
+        tagline4: { x: offsetLeft + 1100, y: offsetTop + 220 },
+      };
+      setPositions((prev) => ({
+        ...prev,
+        ...(windowIsMobile ? mobilePositions : regularPositions),
+      }));
+      setIsTaglinePositionsLoaded(true);
+    }
+
     if (armaTuMesaRef.current && !isPositionsLoaded) {
       const windowIsMobile = window.innerWidth < 800;
       const { offsetTop, offsetLeft } = armaTuMesaRef.current;
 
-      // Ajusta la posición de box3 dentro de la sección "arma-tu-mesa"
       const mobilePositions = {
-        box3: { x: offsetLeft + 10, y: offsetTop + 110 },
-        box4: { x: offsetLeft + 100, y: offsetTop + 190 },
-        box5: { x: offsetLeft + 210, y: offsetTop + 80 },
-        box6: { x: offsetLeft + 20, y: offsetTop + 450 },
-        box7: { x: offsetLeft + 140, y: offsetTop + 330 },
-        box8: { x: offsetLeft + 280, y: offsetTop + 450 },
+        box1: { x: offsetLeft + 271, y: offsetTop + 67 },
+        box2: { x: offsetLeft + 118, y: offsetTop + 213 },
+        box3: { x: offsetLeft + 6, y: offsetTop + 63 },
+        box4: { x: offsetLeft + 1, y: offsetTop + 286 },
+        box5: { x: offsetLeft + 123, y: offsetTop + 452 },
+        box6: { x: offsetLeft + 215, y: offsetTop + 616 },
+        box7: { x: offsetLeft + 223, y: offsetTop + 311 },
+        box8: { x: offsetLeft + 24, y: offsetTop + 477 },
       };
       const regularPositions = {
-        box3: { x: offsetLeft + 410, y: offsetTop + 100 },
-        box4: { x: offsetLeft + 710, y: offsetTop + 50 },
-        box5: { x: offsetLeft + 1010, y: offsetTop + 150 },
-        box6: { x: offsetLeft + 100, y: offsetTop + 350 },
-        box7: { x: offsetLeft + 410, y: offsetTop + 400 },
-        box8: { x: offsetLeft + 760, y: offsetTop + 370 },
+        box1: { x: offsetLeft + 1189, y: offsetTop + 123 },
+        box2: { x: offsetLeft + 828, y: offsetTop + 232 },
+        box3: { x: offsetLeft + 661, y: offsetTop + 492 },
+        box4: { x: offsetLeft + 516, y: offsetTop + 107 },
+        box5: { x: offsetLeft + 1052, y: offsetTop + 503 },
+        box6: { x: offsetLeft + 91, y: offsetTop + 541 },
+        box7: { x: offsetLeft + 132, y: offsetTop + 113 },
+        box8: { x: offsetLeft + 437, y: offsetTop + 397 },
       };
       setPositions((prev) => ({
         ...prev,
@@ -97,7 +143,7 @@ export default function Page() {
       }));
       setIsPositionsLoaded(true);
     }
-  }, [armaTuMesaRef, isPositionsLoaded]);
+  }, [taglineRef, isTagLinePositionsLoaded, armaTuMesaRef, isPositionsLoaded]);
 
   const handleDragEnd = (event) => {
     const { delta, active } = event;
@@ -135,14 +181,71 @@ export default function Page() {
       }}
     >
       <DndContext onDragEnd={handleDragEnd}>
-        <Heading />
-        <AboutUs isMobile={isMobile} />
-        <MarqueeOrange />
-        <Menu />
-        <ArmaTuMesa armaTuMesaRef={armaTuMesaRef} />
-        <MarqueeWhite />
-        <SucursalesMotion />
+        <GlobalFrame />
+        <Heading2 />
+        <Tagline ref={taglineRef} />
+        <MarqueeWhite2 />
+        <Sucursales2 />
+        <SeComeRico />
+        <TacosTacosTacos isMobile={isMobile} ref={armaTuMesaRef} />
+        <Links />
+        <CerroSilla />
 
+        <DraggableComponent
+          id="tagline1"
+          position={positions.tagline1}
+          src={`${basePath}/images/tagline/tagline1.png`}
+          alt="Taco de asada"
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="tagline2"
+          position={positions.tagline2}
+          src={`${basePath}/images/tagline/tagline2.png`}
+          alt="Espiro-papas"
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="tagline3"
+          position={positions.tagline3}
+          src={`${basePath}/images/tagline/tagline3.png`}
+          alt="Pastor"
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="tagline4"
+          position={positions.tagline4}
+          src={`${basePath}/images/tagline/tagline4.png`}
+          alt="Pastor negro"
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
+          visible={isPositionsLoaded}
+        />
+
+        <DraggableComponent
+          id="box1"
+          position={positions.box1}
+          src={`${basePath}/images/mesa/CAGUAMITA.png`}
+          alt="Taco de asada"
+          width={isMobile ? 80 : 150}
+          height={isMobile ? 80 : 150}
+          visible={isPositionsLoaded}
+        />
+        <DraggableComponent
+          id="box2"
+          position={positions.box2}
+          src={`${basePath}/images/mesa/ORDEN_TOMPRO.png`}
+          alt="Espiro-papas"
+          width={isMobile ? 150 : 300}
+          height={isMobile ? 150 : 300}
+          visible={isPositionsLoaded}
+        />
         <DraggableComponent
           id="box3"
           position={positions.box3}
@@ -191,20 +294,13 @@ export default function Page() {
         <DraggableComponent
           id="box8"
           position={positions.box8}
-          src={`${basePath}/images/mesa/VASO.png`}
+          src={`${basePath}/images/mesa/HORCHATA.png`}
           alt="Pastor negro"
-          width={isMobile ? 80 : 180}
-          height={isMobile ? 80 : 180}
+          width={isMobile ? 80 : 120}
+          height={isMobile ? 80 : 120}
           visible={isPositionsLoaded}
         />
       </DndContext>
-
-      <footer className="bg-[#020304] py-4 px-6 text-center">
-        <p className="text-white">
-          &copy; {new Date().getFullYear()} Tacos del Valle. Todos los derechos
-          reservados.
-        </p>
-      </footer>
     </div>
   );
 }

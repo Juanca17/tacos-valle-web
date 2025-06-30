@@ -14,7 +14,7 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: "GTAlpinaBold";
   src: url("/tacos-valle-web/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf")
     format("truetype");
@@ -79,10 +79,10 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 /** Local **/
-/* @font-face {
+@font-face {
   font-family: "GTAlpinaBold";
   src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf") format("truetype");
   font-weight: bold;
@@ -144,7 +144,7 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-} */
+}
 
 @layer utilities {
   @keyframes slideDown {
@@ -252,6 +252,10 @@ body {
   font-weight: bold;
 }
 
+.fixed-logo {
+  width: 90vw;
+  height: 100%;
+}
 .logo {
   width: 70vw;
   height: 100%;
@@ -269,6 +273,30 @@ body {
 @media (max-width: 400px) {
   .logo {
     width: 90vw;
+  }
+}
+
+.top-links {
+  font-size: 1.5rem;
+}
+@media (max-width: 400px) {
+  .top-links {
+    font-size: 1rem;
+  }
+}
+
+.tagline-title {
+  font-size: 6.5rem;
+}
+.tagline-subtitle {
+  font-size: 1.2rem;
+}
+@media (max-width: 1024px) {
+  .tagline-title {
+    font-size: 2.5rem;
+  }
+  .tagline-subtitle {
+    font-size: 0.75rem;
   }
 }
 
@@ -294,6 +322,13 @@ body {
   padding: 8px;
   border: 0.5px solid #171717;
   text-align: center;
+}
+
+.circulo_se_come_rico {
+  border-radius: 50%;
+  width: 36px;
+  height: 30px;
+  padding: 8px;
 }
 
 .text_button_white {
