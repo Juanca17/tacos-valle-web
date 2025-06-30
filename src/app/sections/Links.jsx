@@ -65,6 +65,7 @@ export const Links = () => {
         >
           FACEBOOK
         </a>
+        /
         <a
           href={SOCIAL_LINKS.INSTAGRAM}
           target="_blank"
@@ -73,6 +74,7 @@ export const Links = () => {
         >
           INSTAGRAM
         </a>
+        /
         <a
           href={SOCIAL_LINKS.TIKTOK}
           target="_blank"
