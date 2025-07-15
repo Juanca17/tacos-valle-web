@@ -50,7 +50,7 @@ export const Heading2 = ({ isMobile }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % headingImages.length);
-    }, 2000); // Cada 3.5 segundos
+    }, 2000); // Cada 2 segundos
 
     return () => clearInterval(interval);
   }, []);
