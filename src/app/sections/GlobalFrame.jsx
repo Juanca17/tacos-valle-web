@@ -1,7 +1,7 @@
 "use client";
 
 import FixedLogo from "../components/FixedLogo";
-import { useHideOnIntersect } from "../components/useHideOnIntersect";
+import { useDidIntersect } from "../components/useDidIntersect";
 import { SOCIAL_LINKS } from "../config";
 
 const HeadingButtons = ({ hidden }) => {
@@ -12,7 +12,7 @@ const HeadingButtons = ({ hidden }) => {
       className={`fixed z-20 w-screen px-4 md:px-12 flex justify-between font-jean-luc-thin top-links transition-opacity duration-700 ease-in-out ${
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      style={{ top: "38px", color: "white" }}
+      style={{ top: "38px", color: "#FF4200" }}
     >
       <div className="space-x-2 text-[1rem] sm:text-[1.5rem]">
         <a
@@ -51,26 +51,47 @@ const HeadingButtons = ({ hidden }) => {
   );
 };
 
-const HeadingLogo = ({ hidden }) => {
+const HeadingLogo = ({ hidden, cerrosilla }) => {
+  const cerrosillaStyle = {
+    bottom: "38px",
+  };
   return (
     <div
       className={`fixed z-20 w-screen flex justify-center transition-opacity duration-700 ease-in-out ${
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      style={{ bottom: "38px" }}
+      style={
+        cerrosilla
+          ? cerrosillaStyle
+          : {
+              bottom: "0",
+              background: "#EAE8DF",
+              paddingBottom: "18px",
+              paddingTop: "18px",
+            }
+      }
     >
-      <FixedLogo className="fixed-logo" />
+      <FixedLogo
+        className="fixed-logo"
+        color={cerrosilla ? "#fff" : "#FF4200"}
+      />
     </div>
   );
 };
 
 export const GlobalFrame = () => {
-  const shouldHide = useHideOnIntersect(["tacos_tacos_tacos", "links"]);
+  const shouldHide = useDidIntersect(["tacos_tacos_tacos", "links"]);
+  const heading = useDidIntersect(["heading"]);
+  const cerrosilla = useDidIntersect(["cerrosilla"]);
 
   return (
     <>
       <HeadingButtons hidden={shouldHide} />
-      <HeadingLogo hidden={shouldHide} />
+      {/* <HeadingLogo
+        hidden={shouldHide}
+        heading={heading}
+        cerrosilla={cerrosilla}
+      /> */}
     </>
   );
 };

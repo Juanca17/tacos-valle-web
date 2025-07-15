@@ -42,14 +42,16 @@ export const Sucursales2 = () => {
                 <span className="font-gt-alpina-bold">{sucursal.cp} </span>
                 <span className="font-jean-luc-thin">{sucursal.ciudad}</span>
               </p>
-              <a
-                href={sucursal.link}
-                className="underline text-black hover:text-[#ff3c00] transition"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Abrir Mapa
-              </a>
+              {sucursal.link ? (
+                <a
+                  href={sucursal.link}
+                  className="underline text-black hover:text-[#ff3c00] transition"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Abrir Mapa
+                </a>
+              ) : null}
             </div>
           ))}
         </div>

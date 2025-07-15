@@ -3,7 +3,8 @@ import { basePath } from "./config";
 
 export const metadata = {
   title: "Tacos del Valle",
-  description: "Una taquería de la vieja escuela con un toque moderno.",
+  description:
+    "En Tacos Del Valle nos encanta experimentar y reinventar un poco la cocina mexicana. Aquí, cada taco es único, mezclando sabores y texturas que te sorprenderán. Nuestro espacio también es especial, transportándote a la era dorada de las cenadurías en México con un ambiente nostálgico y acogedor.",
   icons: {
     icon: `${basePath}/favicon/favicon.ico`,
     shortcut: `${basePath}/favicon/favicon.ico`,
@@ -26,9 +27,9 @@ export const metadata = {
   manifest: `${basePath}/favicon/site.webmanifest`,
   openGraph: {
     url: "https://tacosvalle.com",
-    title: "Tacos Valle - Auténtico Sabor Mexicano",
+    title: "Tacos Del Valle",
     description:
-      "Descubre los mejores tacos con ingredientes frescos y recetas tradicionales.",
+      "En Tacos Del Valle nos encanta experimentar y reinventar un poco la cocina mexicana. Aquí, cada taco es único, mezclando sabores y texturas que te sorprenderán. Nuestro espacio también es especial, transportándote a la era dorada de las cenadurías en México con un ambiente nostálgico y acogedor.",
     images: [],
   },
 };

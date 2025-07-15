@@ -3,14 +3,14 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const FixedLogo = ({ className = "w-20 h-20" }) => (
+const FixedLogo = ({ className = "w-20 h-20", color = "#FF4200" }) => (
   <svg
     className={`logo-animated ${className}`}
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1775.63 143.19"
   >
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -22,7 +22,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -38,7 +38,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -50,7 +50,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -66,7 +66,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -78,7 +78,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -90,7 +90,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -102,7 +102,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -114,7 +114,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -126,7 +126,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -138,7 +138,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -150,7 +150,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}
@@ -162,7 +162,7 @@ const FixedLogo = ({ className = "w-20 h-20" }) => (
       />
     </motion.g>
     <motion.g
-      fill="#fff"
+      fill={color}
       className="logo_letter"
       whileHover={{ y: -50 }}
       whileTap={{ y: -50 }}

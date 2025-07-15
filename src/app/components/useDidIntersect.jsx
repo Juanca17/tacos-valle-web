@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useHideOnIntersect(targetIds) {
+export function useDidIntersect(targetIds) {
   const [isIntersecting, setIsIntersecting] = useState(false);
 
   useEffect(() => {

@@ -5,29 +5,6 @@ import { basePath, LINKS } from "../config";
 import { HeadingImage } from "../components/HeadingImage";
 import Image from "next/image";
 
-const MichelinLogo = () => {
-  return (
-    <div
-      className="absolute z-20 w-screen px-4 md:px-12"
-      style={{ top: "125px", left: "0" }}
-    >
-      <a
-        href={LINKS.MICHELIN_GUIDE}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="cursosr-pointer"
-      >
-        <Image
-          src={`${basePath}/images/heading/michelin.png`}
-          alt="MICHELIN BIB GOURMAND"
-          width={160}
-          height={160}
-        />
-      </a>
-    </div>
-  );
-};
-
 const headingImages = [
   "portada1.png",
   "portada2.png",
@@ -40,7 +17,7 @@ const headingImages = [
   "portada9.png",
 ];
 
-export const Heading2 = () => {
+export const Heading2 = ({ isMobile }) => {
   const [imageIndex, setImageIndex] = useState(0);
 
   useEffect(() => {
@@ -53,10 +30,28 @@ export const Heading2 = () => {
 
   return (
     <header
+      id="heading"
       className="w-full h-screen overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
-      <MichelinLogo />
+      <div
+        className="absolute z-20 w-screen md:px-6"
+        style={{ top: "125px", left: "0" }}
+      >
+        <a
+          href={LINKS.MICHELIN_GUIDE}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursosr-pointer"
+        >
+          <Image
+            src={`${basePath}/images/heading/michelin.png`}
+            alt="MICHELIN BIB GOURMAND"
+            width={isMobile ? 100 : 160}
+            height={isMobile ? 100 : 160}
+          />
+        </a>
+      </div>
       <div className="relative w-full h-full overflow-hidden">
         <HeadingImage
           src={`${basePath}/images/heading/${headingImages[imageIndex]}`}

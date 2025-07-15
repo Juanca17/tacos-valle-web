@@ -253,7 +253,7 @@ body {
 }
 
 .fixed-logo {
-  width: 90vw;
+  width: 80vw;
   height: 100%;
 }
 .logo {
@@ -306,8 +306,11 @@ body {
 }
 
 .no_selector {
-  user-drag: none;
   -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;

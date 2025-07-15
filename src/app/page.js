@@ -13,6 +13,8 @@ import { Links } from "./sections/Links";
 import { CerroSilla } from "./sections/CerroSilla";
 import { MarqueeWhite2 } from "./sections/MarqueeWhite2";
 import { GlobalFrame } from "./sections/GlobalFrame";
+import { LogoSection } from "./sections/LogoSection";
+import { SeoSection } from "./sections/SeoSection";
 
 export default function Page() {
   const taglineRef = useRef(null);
@@ -182,7 +184,8 @@ export default function Page() {
     >
       <DndContext onDragEnd={handleDragEnd}>
         <GlobalFrame />
-        <Heading2 />
+        <Heading2 isMobile={isMobile} />
+        <LogoSection />
         <Tagline ref={taglineRef} />
         <MarqueeWhite2 />
         <Sucursales2 />
@@ -190,8 +193,9 @@ export default function Page() {
         <TacosTacosTacos isMobile={isMobile} ref={armaTuMesaRef} />
         <Links />
         <CerroSilla />
+        <SeoSection />
 
-        <DraggableComponent
+        {/* <DraggableComponent
           id="tagline1"
           position={positions.tagline1}
           src={`${basePath}/images/tagline/tagline1.png`}
@@ -226,7 +230,7 @@ export default function Page() {
           width={isMobile ? 150 : 300}
           height={isMobile ? 150 : 300}
           visible={isPositionsLoaded}
-        />
+        /> */}
 
         <DraggableComponent
           id="box1"
