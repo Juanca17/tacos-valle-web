@@ -8,7 +8,7 @@ export const HeadingImage = ({ src, alt, imgClass = "" }) => {
         src={src}
         alt={alt}
         fill
-        className={`object-cover absolute inset-0 transition-all duration-700 ease-in-out ${imgClass}`}
+        className={`object-cover absolute inset-0 transition-opacity duration-300 ${imgClass}`}
       />
     </div>
   );
