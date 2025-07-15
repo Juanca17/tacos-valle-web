@@ -6,15 +6,42 @@ import { HeadingImage } from "../components/HeadingImage";
 import Image from "next/image";
 
 const headingImages = [
-  "portada1.png",
-  "portada2.png",
-  "portada3.png",
-  "portada4.png",
-  "portada5.png",
-  "portada6.png",
-  "portada7.png",
-  "portada8.png",
-  "portada9.png",
+  {
+    url: "heading1.webp",
+    imgClass: "object-[40%_60%]",
+  },
+  {
+    url: "heading2.webp",
+    imgClass: "object-[40%_45%]",
+  },
+  {
+    url: "heading3.webp",
+    imgClass: "object-[40%_45%]",
+  },
+  {
+    url: "heading4.webp",
+    imgClass: "object-[40%_62%]",
+  },
+  {
+    url: "heading5.webp",
+    imgClass: "scale-[120%] object-[40%_40%]",
+  },
+  {
+    url: "heading6.webp",
+    imgClass: "object-[30%_52%]",
+  },
+  {
+    url: "heading7.webp",
+    imgClass: "object-[30%_52%]",
+  },
+  {
+    url: "heading8.webp",
+    imgClass: "scale-[150%] object-[30%_80%]",
+  },
+  {
+    url: "heading9.png",
+    imgClass: "object-[80%_20%]",
+  },
 ];
 
 export const Heading2 = ({ isMobile }) => {
@@ -31,7 +58,7 @@ export const Heading2 = ({ isMobile }) => {
   return (
     <header
       id="heading"
-      className="w-full h-screen overflow-hidden flex flex-col md:flex-row relative"
+      className="w-full h-[80vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
       <div
@@ -54,9 +81,10 @@ export const Heading2 = ({ isMobile }) => {
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <HeadingImage
-          src={`${basePath}/images/heading/${headingImages[imageIndex]}`}
+          src={`${basePath}/images/heading/${headingImages?.[imageIndex]?.url}`}
           alt="Tacos Del Valle"
           direction="left"
+          imgClass={headingImages?.[imageIndex]?.imgClass}
         />
       </div>
     </header>
