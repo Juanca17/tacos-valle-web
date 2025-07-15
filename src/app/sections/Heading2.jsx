@@ -50,10 +50,10 @@ export const Heading2 = ({ isMobile }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setImageIndex((prev) => (prev + 1) % headingImages.length);
-    }, 2000); // Cada 2 segundos
+    }, 3500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [imageIndex]);
 
   return (
     <header
@@ -81,10 +81,9 @@ export const Heading2 = ({ isMobile }) => {
       </div>
       <div className="relative w-full h-full overflow-hidden">
         <HeadingImage
-          src={`${basePath}/images/heading/${headingImages?.[imageIndex]?.url}`}
+          src={`${basePath}/images/heading/${headingImages[imageIndex].url}`}
           alt="Tacos Del Valle"
-          direction="left"
-          imgClass={headingImages?.[imageIndex]?.imgClass}
+          imgClass={headingImages[imageIndex].imgClass}
         />
       </div>
     </header>
