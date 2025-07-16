@@ -16,7 +16,7 @@ const headingImages = [
   },
   {
     url: "heading3.webp",
-    imgClass: "object-[40%_45%]",
+    imgClass: "object-[50%_50%] md:object-[40%_45%]",
   },
   {
     url: "heading4.webp",
@@ -58,7 +58,7 @@ export const Heading2 = ({ isMobile }) => {
   return (
     <header
       id="heading"
-      className="w-full h-[40vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
+      className="w-full h-[65vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
       <div

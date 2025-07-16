@@ -31,14 +31,14 @@ const TAGLINE_INFO = [
   },
   {
     image: "tagline3.png",
-    name: "TROMPO ORDEN MIXTA",
-    description: "Orden de 3 tacos con 1 pza de cada trompo de la casa.",
-  },
-  {
-    image: "tagline4.png",
     name: "TOSTADA DE LA SECU",
     description:
       "Tostada Roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
+  },
+  {
+    image: "tagline4.png",
+    name: "TROMPO ORDEN MIXTA",
+    description: "Orden de 3 tacos con 1 pza de cada trompo de la casa.",
   },
 ];
 
