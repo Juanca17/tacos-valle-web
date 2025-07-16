@@ -13,7 +13,7 @@ import { Links } from "./sections/Links";
 import { CerroSilla } from "./sections/CerroSilla";
 import { MarqueeWhite2 } from "./sections/MarqueeWhite2";
 import { GlobalFrame } from "./sections/GlobalFrame";
-import { LogoSection } from "./sections/LogoSection";
+// import { LogoSection } from "./sections/LogoSection";
 import { SeoSection } from "./sections/SeoSection";
 
 export default function Page() {
@@ -185,7 +185,7 @@ export default function Page() {
       <DndContext onDragEnd={handleDragEnd}>
         <GlobalFrame />
         <Heading2 isMobile={isMobile} />
-        <LogoSection />
+        {/* <LogoSection /> */}
         <Tagline ref={taglineRef} />
         <MarqueeWhite2 />
         <Sucursales2 />

@@ -66,8 +66,8 @@ const HeadingLogo = ({ hidden, cerrosilla }) => {
           : {
               bottom: "0",
               background: "#EAE8DF",
-              paddingBottom: "18px",
-              paddingTop: "18px",
+              paddingBottom: "2rem",
+              paddingTop: "2rem",
             }
       }
     >
@@ -82,16 +82,12 @@ const HeadingLogo = ({ hidden, cerrosilla }) => {
 export const GlobalFrame = () => {
   const shouldHide = useDidIntersect(["tacos_tacos_tacos", "links"]);
   const heading = useDidIntersect(["heading"]);
-  const cerrosilla = useDidIntersect(["cerrosilla"]);
+  // const cerrosilla = useDidIntersect(["cerrosilla"]);
 
   return (
     <>
       <HeadingButtons hidden={shouldHide} />
-      {/* <HeadingLogo
-        hidden={shouldHide}
-        heading={heading}
-        cerrosilla={cerrosilla}
-      /> */}
+      <HeadingLogo hidden={shouldHide} heading={heading} />
     </>
   );
 };
