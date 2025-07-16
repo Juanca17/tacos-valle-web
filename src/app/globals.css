@@ -383,3 +383,12 @@ body {
 .logo-animated {
   overflow: visible;
 }
+
+/* Oculta scrollbar en navegadores modernos */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Safari & Chrome */
+}

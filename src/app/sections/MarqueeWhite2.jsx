@@ -16,7 +16,7 @@ export const MarqueeWhite2 = () => {
               .flatMap((_, j) =>
                 phrases.map((phrase, index) => (
                   <div key={`${i}-${j}-${index}`} className="flex items-center">
-                    <div className="font-jean-luc-thin text-[1.75rem] sm:text-[2.5rem] mx-3">
+                    <div className="font-gt-alpina-bold-italic text-[1.75rem] sm:text-[2.5rem] mx-3">
                       {phrase}
                     </div>
                     <div className="w-[80px] h-[80px] mx-3 flex items-center justify-center">

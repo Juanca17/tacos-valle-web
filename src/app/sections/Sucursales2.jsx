@@ -1,61 +1,55 @@
 import { SUCURSALES_INFO } from "../config";
-
-const chunkArray = (arr, size) => {
-  const result = [];
-  for (let i = 0; i < arr.length; i += size) {
-    result.push(arr.slice(i, i + size));
-  }
-  return result;
+// min-w-[80vw] md:min-w-[360px]
+const SucursalItem = ({ sucursal }) => {
+  return (
+    <div className="bg-white rounded-[80px] min-w-[80vw] md:min-w-[360px] w-[80vw] sm:w-[420px] min-h-[460px] px-6 py-12 text-center shadow-lg">
+      <p className="text-lg font-jean-luc-thin text-black uppercase tracking-wide mb-8">
+        {sucursal.nombre}
+      </p>
+      <h2 className="text-4xl font-gt-alpina-bold text-[#ff3c00] mb-2">
+        {sucursal.calle}
+      </h2>
+      <h3 className="text-4xl font-gt-alpina-bold text-[#ff3c00] mb-2">
+        {sucursal.numero}
+      </h3>
+      <p className="text-4xl font-jean-luc-thin text-[#ff3c00] mb-1">
+        {sucursal.colonia}
+      </p>
+      <p className="text-4xl text-[#ff3c00] mb-8">
+        <span className="font-gt-alpina-bold">{sucursal.cp} </span>
+        <span className="font-jean-luc-thin">{sucursal.ciudad}</span>
+      </p>
+      {sucursal.link ? (
+        <a
+          href={sucursal.link}
+          className="underline text-black hover:text-[#ff3c00] transition"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Abrir Mapa
+        </a>
+      ) : null}
+    </div>
+  );
 };
 
 export const Sucursales2 = () => {
-  const sucursalesEnPares = chunkArray(SUCURSALES_INFO, 2);
-
+  const alignCenter =
+    SUCURSALES_INFO?.length < 4 ? "items-center justify-center" : "";
   return (
     <section
       id="sucursales"
       className="min-h-[110vh] bg-[#ff3c00] px-4 py-16 flex flex-col items-center justify-center gap-12"
     >
-      {sucursalesEnPares.map((grupo, idx) => (
+      <div className="flex flex-col gap-10 w-full md:gap-16">
         <div
-          key={idx}
-          className={`flex flex-col md:flex-row justify-center items-center gap-y-10 md:gap-x-20 w-full`}
+          className={`flex md:flex-row flex-col overflow-x-auto ${alignCenter} scrollbar-hide gap-10 md:gap-16 w-full px-2 md:px-6`}
         >
-          {grupo.map((sucursal, i) => (
-            <div
-              key={i}
-              className="bg-white rounded-[80px] px-6 py-12 text-center w-[300px] md:w-[420px] shadow-lg"
-            >
-              <p className="text-lg font-jean-luc-thin text-black uppercase tracking-wide mb-8">
-                {sucursal.nombre}
-              </p>
-              <h2 className="text-4xl font-gt-alpina-bold text-[#ff3c00] mb-2">
-                {sucursal.calle}
-              </h2>
-              <h3 className="text-4xl font-gt-alpina-bold text-[#ff3c00] mb-2">
-                {sucursal.numero}
-              </h3>
-              <p className="text-4xl font-jean-luc-thin text-[#ff3c00] mb-1">
-                {sucursal.colonia}
-              </p>
-              <p className="text-4xl text-[#ff3c00] mb-8">
-                <span className="font-gt-alpina-bold">{sucursal.cp} </span>
-                <span className="font-jean-luc-thin">{sucursal.ciudad}</span>
-              </p>
-              {sucursal.link ? (
-                <a
-                  href={sucursal.link}
-                  className="underline text-black hover:text-[#ff3c00] transition"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Abrir Mapa
-                </a>
-              ) : null}
-            </div>
+          {SUCURSALES_INFO.map((sucursal, index) => (
+            <SucursalItem key={index} sucursal={sucursal} />
           ))}
         </div>
-      ))}
+      </div>
     </section>
   );
 };
