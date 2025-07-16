@@ -183,7 +183,7 @@ export default function Page() {
       }}
     >
       <DndContext onDragEnd={handleDragEnd}>
-        <GlobalFrame />
+        <GlobalFrame isMobile={isMobile} />
         <Heading2 isMobile={isMobile} />
         {/* <LogoSection /> */}
         <Tagline ref={taglineRef} />

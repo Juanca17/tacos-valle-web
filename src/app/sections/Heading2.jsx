@@ -58,7 +58,7 @@ export const Heading2 = ({ isMobile }) => {
   return (
     <header
       id="heading"
-      className="w-full h-[65vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
+      className="w-full h-[82vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
       <div

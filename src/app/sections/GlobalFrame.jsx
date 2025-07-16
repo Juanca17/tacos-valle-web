@@ -51,7 +51,7 @@ const HeadingButtons = ({ hidden }) => {
   );
 };
 
-const HeadingLogo = ({ hidden, cerrosilla }) => {
+const HeadingLogo = ({ isMobile, hidden, cerrosilla }) => {
   const cerrosillaStyle = {
     bottom: "38px",
   };
@@ -66,8 +66,8 @@ const HeadingLogo = ({ hidden, cerrosilla }) => {
           : {
               bottom: "0",
               background: "#EAE8DF",
-              paddingBottom: "2rem",
-              paddingTop: "2rem",
+              paddingBottom: isMobile ? "4rem" : "2rem",
+              paddingTop: isMobile ? "4rem" : "2rem",
             }
       }
     >
@@ -79,7 +79,7 @@ const HeadingLogo = ({ hidden, cerrosilla }) => {
   );
 };
 
-export const GlobalFrame = () => {
+export const GlobalFrame = ({ isMobile }) => {
   const shouldHide = useDidIntersect(["tacos_tacos_tacos", "links"]);
   const heading = useDidIntersect(["heading"]);
   // const cerrosilla = useDidIntersect(["cerrosilla"]);
@@ -87,7 +87,7 @@ export const GlobalFrame = () => {
   return (
     <>
       <HeadingButtons hidden={shouldHide} />
-      <HeadingLogo hidden={shouldHide} heading={heading} />
+      <HeadingLogo isMobile={isMobile} hidden={shouldHide} heading={heading} />
     </>
   );
 };
