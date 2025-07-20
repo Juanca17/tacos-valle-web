@@ -17,25 +17,8 @@ import { GlobalFrame } from "./sections/GlobalFrame";
 import { SeoSection } from "./sections/SeoSection";
 
 export default function Page() {
-  const taglineRef = useRef(null);
   const armaTuMesaRef = useRef(null);
   const initialPositions = {
-    tagline1: {
-      x: 0,
-      y: 0,
-    },
-    tagline2: {
-      x: 0,
-      y: 0,
-    },
-    tagline3: {
-      x: 0,
-      y: 0,
-    },
-    tagline4: {
-      x: 0,
-      y: 0,
-    },
     box1: {
       x: 0,
       y: 0,
@@ -71,8 +54,6 @@ export default function Page() {
   };
   const [positions, setPositions] = useState(initialPositions);
   const [isPositionsLoaded, setIsPositionsLoaded] = useState(false);
-  const [isTagLinePositionsLoaded, setIsTaglinePositionsLoaded] =
-    useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
 
@@ -92,29 +73,6 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (taglineRef.current && !isTagLinePositionsLoaded) {
-      const windowIsMobile = window.innerWidth < 800;
-      const { offsetTop, offsetLeft } = taglineRef.current;
-
-      const mobilePositions = {
-        tagline1: { x: offsetLeft + 30, y: offsetTop + 189 },
-        tagline2: { x: offsetLeft + 217, y: offsetTop + 364 },
-        tagline3: { x: offsetLeft + 206, y: offsetTop + 197 },
-        tagline4: { x: offsetLeft + 59, y: offsetTop + 351 },
-      };
-      const regularPositions = {
-        tagline1: { x: offsetLeft + 10, y: offsetTop + 250 },
-        tagline2: { x: offsetLeft + 350, y: offsetTop + 270 },
-        tagline3: { x: offsetLeft + 700, y: offsetTop + 250 },
-        tagline4: { x: offsetLeft + 1100, y: offsetTop + 220 },
-      };
-      setPositions((prev) => ({
-        ...prev,
-        ...(windowIsMobile ? mobilePositions : regularPositions),
-      }));
-      setIsTaglinePositionsLoaded(true);
-    }
-
     if (armaTuMesaRef.current && !isPositionsLoaded) {
       const windowIsMobile = window.innerWidth < 800;
       const { offsetTop, offsetLeft } = armaTuMesaRef.current;
@@ -145,7 +103,7 @@ export default function Page() {
       }));
       setIsPositionsLoaded(true);
     }
-  }, [taglineRef, isTagLinePositionsLoaded, armaTuMesaRef, isPositionsLoaded]);
+  }, [armaTuMesaRef, isPositionsLoaded]);
 
   const handleDragEnd = (event) => {
     const { delta, active } = event;
@@ -186,7 +144,7 @@ export default function Page() {
         <GlobalFrame isMobile={isMobile} />
         <Heading2 isMobile={isMobile} />
         {/* <LogoSection /> */}
-        <Tagline ref={taglineRef} />
+        <Tagline />
         <MarqueeWhite2 />
         <Sucursales2 />
         <SeComeRico />
@@ -194,43 +152,6 @@ export default function Page() {
         <Links />
         <CerroSilla />
         <SeoSection />
-
-        {/* <DraggableComponent
-          id="tagline1"
-          position={positions.tagline1}
-          src={`${basePath}/images/tagline/tagline1.png`}
-          alt="Taco de asada"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="tagline2"
-          position={positions.tagline2}
-          src={`${basePath}/images/tagline/tagline2.png`}
-          alt="Espiro-papas"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="tagline3"
-          position={positions.tagline3}
-          src={`${basePath}/images/tagline/tagline3.png`}
-          alt="Pastor"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="tagline4"
-          position={positions.tagline4}
-          src={`${basePath}/images/tagline/tagline4.png`}
-          alt="Pastor negro"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        /> */}
 
         <DraggableComponent
           id="box1"
@@ -262,7 +183,7 @@ export default function Page() {
         <DraggableComponent
           id="box4"
           position={positions.box4}
-          src={`${basePath}/images/mesa/ESPIRO_PAPAS.png`}
+          src={`${basePath}/images/mesa/FLAUTAS.png`}
           alt="Espiro-papas"
           width={isMobile ? 150 : 300}
           height={isMobile ? 150 : 300}
@@ -271,7 +192,7 @@ export default function Page() {
         <DraggableComponent
           id="box5"
           position={positions.box5}
-          src={`${basePath}/images/mesa/PASTOR.png`}
+          src={`${basePath}/images/mesa/TROMPO.png`}
           alt="Pastor"
           width={isMobile ? 150 : 300}
           height={isMobile ? 150 : 300}
@@ -280,7 +201,7 @@ export default function Page() {
         <DraggableComponent
           id="box6"
           position={positions.box6}
-          src={`${basePath}/images/mesa/PASTOR_NEGRO.png`}
+          src={`${basePath}/images/mesa/TROMPO_ROJO.png`}
           alt="Pastor negro"
           width={isMobile ? 150 : 300}
           height={isMobile ? 150 : 300}

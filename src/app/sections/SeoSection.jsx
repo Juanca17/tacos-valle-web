@@ -4,25 +4,46 @@ export const SeoSection = () => {
   return (
     <section
       id="seosection"
-      className="min-h-[120vh] bg-[#EAE8DF] flex flex-col justify-center items-center text-center"
+      className="min-h-[110vh] bg-[#EAE8DF] flex flex-col justify-center items-center text-center"
     >
-      <div className="py-[8rem] w-[90%] md:w-[60%]">
-        <p className="text-xl md:text-[2.8rem] font-gt-alpina-bold text-black leading-snug">
+      <div className="py-[10rem] md:py-[12rem] w-[90%] md:w-[80%] text-black text-md md:text-[1.8rem]">
+        <p className="leading-snug">
           <span>
-            En Tacos Del Valle nos encanta experimentar y reinventar un poco la
-            cocina mexicana. Aquí, cada taco es único, mezclando sabores y
-            texturas que te sorprenderán. Nuestro espacio también es especial,
-            transportándote a la era dorada de las cenadurías en México con un
+            En <span className="font-jean-luc-thin mr-3">Tacos Del Valle </span>{" "}
+            nos encanta experimentar y reinventar <br />
+            un poco la{" "}
+            <span className="font-gt-alpina-bold">cocina mexicana</span>. Aquí,
+            cada taco es{" "}
+            <span className="font-champion-gothic-bold">único</span>,
+            <br /> mezclando{" "}
+            <span className="font-jean-luc-thin">sabores y texturas</span> que
+            te sorprenderán.
+          </span>
+        </p>
+        <p className="mt-[4rem] leading-snug">
+          <span>
+            Nuestro espacio también es especial,
+            <br /> transportándote a la era dorada <br /> de las{" "}
+            <span className="font-gt-alpina-bold">
+              cenadurías en México
+            </span>{" "}
+            con un <br />
             ambiente nostálgico y acogedor.
           </span>
         </p>
-        <p className="mt-[4rem] text-xl md:text-[2.8rem] font-gt-alpina-bold text-black leading-snug">
+        <p className="mt-[4rem] leading-snug">
           <span>
-            Además de nuestra serie de tres trompos que son, el trompo de carne
-            asada, que es de carne premium de res; el trompo rojo, pork belly
-            marinado, ¡ojo! Acá son trompos y no pastor; y el especial “Trompo
-            Negro Fuego”: Cerdo y pork belly con un toque de cenizas negras y
-            nuestro marinado especial.
+            Además de nuestra serie de tres trompos que son,
+            <br /> el{" "}
+            <span className="font-jean-luc-thin">trompo de carne asada</span>
+            , que es de carne premium de res;
+            <br /> el <span className="font-jean-luc-thin">trompo rojo</span>,
+            pork belly marinado, <br />
+            ¡ojo! Acá son trompos y no pastor;
+            <br />y el especial{" "}
+            <span className="font-jean-luc-thin">Trompo Negro Fuego</span>,
+            cerdo y pork belly con un toque
+            <br /> de cenizas negras y nuestro marinado especial.
           </span>
         </p>
       </div>
