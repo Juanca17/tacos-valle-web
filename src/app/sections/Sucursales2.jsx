@@ -2,8 +2,8 @@ import { SUCURSALES_INFO } from "../config";
 // min-w-[80vw] md:min-w-[360px]
 const SucursalItem = ({ sucursal }) => {
   return (
-    <div className="bg-white rounded-[80px] min-w-[80vw] md:min-w-[360px] w-[80vw] sm:w-[420px] min-h-[460px] px-6 py-12 text-center shadow-lg">
-      <p className="text-lg font-jean-luc-thin text-black uppercase tracking-wide mb-8">
+    <div className="bg-[#EAE8DF] rounded-[80px] min-w-[80vw] md:min-w-[360px] w-[80vw] sm:w-[420px] min-h-[500px] px-6 py-12 text-center shadow-lg">
+      <p className="text-lg font-jean-luc-thin text-black uppercase tracking-wide mb-8 mt-12">
         {sucursal.nombre}
       </p>
       <h2 className="text-4xl font-gt-alpina-bold text-[#ff3c00] mb-2">

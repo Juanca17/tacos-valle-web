@@ -6,7 +6,7 @@ export const Links = () => {
   return (
     <section
       id="links"
-      className="h-[100vh] bg-[#EAE8DF] flex flex-col justify-center items-center text-center px-4"
+      className="h-[65vh] md:h-[100vh] bg-[#EAE8DF] flex flex-col justify-center items-center text-center px-4"
     >
       <div className="space-y-2">
         <h2 className="text-3xl md:text-[2.8rem] font-gt-alpina-bold text-black leading-snug">

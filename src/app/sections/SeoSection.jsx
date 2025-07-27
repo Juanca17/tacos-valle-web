@@ -6,7 +6,7 @@ export const SeoSection = () => {
       id="seosection"
       className="min-h-[110vh] bg-[#EAE8DF] flex flex-col justify-center items-center text-center"
     >
-      <div className="py-[10rem] md:py-[12rem] w-[90%] md:w-[80%] text-black text-md md:text-[1.8rem]">
+      <div className="py-[9rem] md:py-[12rem] w-[90%] md:w-[80%] text-black text-md md:text-[1.8rem]">
         <p className="leading-snug">
           <span>
             En <span className="font-jean-luc-thin mr-3">Tacos Del Valle </span>{" "}

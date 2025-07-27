@@ -86,17 +86,15 @@ export const Heading2 = ({ isMobile }) => {
           imgClass={headingImages[imageIndex].imgClass}
         />
       </div>
-      {isMobile ? (
-        <div
-          className={`absolute z-19 w-screen flex justify-center transition-opacity duration-700 ease-in-out opacity-100`}
-          style={{
-            bottom: "0",
-            background: "#EAE8DF",
-            paddingBottom: "5rem",
-            paddingTop: "5rem",
-          }}
-        />
-      ) : null}
+      <div
+        className={`absolute z-19 w-screen flex justify-center transition-opacity duration-700 ease-in-out opacity-100`}
+        style={{
+          bottom: "0",
+          background: "#EAE8DF",
+          paddingBottom: "5rem",
+          paddingTop: "5rem",
+        }}
+      />
     </header>
   );
 };

@@ -6,7 +6,7 @@ export const MarqueeWhite2 = () => {
   return (
     <section
       className="w-full h-32 overflow-hidden flex items-center relative"
-      style={{ background: "white", color: "#FF4200" }}
+      style={{ background: "#EAE8DF", color: "#FF4200" }}
     >
       <div className="flex whitespace-nowrap animate-marquee">
         {[...Array(2)].map((_, i) => (

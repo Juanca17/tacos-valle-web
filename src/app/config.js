@@ -27,13 +27,13 @@ const TAGLINE_INFO = [
     image: "tagline2.png",
     name: "TIJUANITA",
     description:
-      "Tortilla (Harina o Maíz), Costra de Queso, Carne Asada, Aguacate & Papa Rallada Dorada.",
+      "Tostada Roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
   },
   {
     image: "tagline3.png",
     name: "TOSTADA DE LA SECU",
     description:
-      "Tostada Roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
+      "Tortilla (Harina o Maíz), Costra de Queso, Carne Asada, Aguacate & Papa Rallada Dorada.",
   },
   {
     image: "tagline4.png",
