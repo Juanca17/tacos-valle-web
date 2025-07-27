@@ -65,7 +65,7 @@ const HeadingLogo = ({ isMobile, hidden, cerrosilla }) => {
           ? cerrosillaStyle
           : {
               bottom: "0",
-              background: "#EAE8DF",
+              background: "transparent",
               paddingBottom: isMobile ? "4rem" : "2rem",
               paddingTop: isMobile ? "4rem" : "2rem",
             }

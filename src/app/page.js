@@ -143,7 +143,6 @@ export default function Page() {
       <DndContext onDragEnd={handleDragEnd}>
         <GlobalFrame isMobile={isMobile} />
         <Heading2 isMobile={isMobile} />
-        {/* <LogoSection /> */}
         <Tagline />
         <MarqueeWhite2 />
         <Sucursales2 />
