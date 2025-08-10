@@ -4,6 +4,7 @@ import { basePath, TAGLINE_INFO } from "../config";
 export const Tagline = () => {
   return (
     <section
+      id="tagline"
       className="text-white w-full min-h-[120vh]"
       style={{ background: "#FF4200" }}
     >

@@ -51,43 +51,31 @@ const HeadingButtons = ({ hidden }) => {
   );
 };
 
-const HeadingLogo = ({ isMobile, hidden, cerrosilla }) => {
-  const cerrosillaStyle = {
-    bottom: "38px",
-  };
+const HeadingLogo = ({ isMobile, hidden }) => {
   return (
     <div
       className={`fixed z-20 w-screen flex justify-center transition-opacity duration-700 ease-in-out ${
         hidden ? "opacity-0 pointer-events-none" : "opacity-100"
       }`}
-      style={
-        cerrosilla
-          ? cerrosillaStyle
-          : {
-              bottom: "0",
-              background: "transparent",
-              paddingBottom: isMobile ? "2rem" : "2rem",
-              paddingTop: isMobile ? "2rem" : "2rem",
-            }
-      }
+      style={{
+        bottom: "0",
+        background: isMobile ? "#EAE8DF" : "transparent",
+        paddingBottom: isMobile ? "2rem" : "2rem",
+        paddingTop: isMobile ? "2rem" : "2rem",
+      }}
     >
-      <FixedLogo
-        className="fixed-logo"
-        color={cerrosilla ? "#fff" : "#FF4200"}
-      />
+      <FixedLogo className="fixed-logo" color="#FF4200" />
     </div>
   );
 };
 
 export const GlobalFrame = ({ isMobile }) => {
   const shouldHide = useDidIntersect(["tacos_tacos_tacos", "links"]);
-  const heading = useDidIntersect(["heading"]);
-  // const cerrosilla = useDidIntersect(["cerrosilla"]);
 
   return (
     <>
       <HeadingButtons hidden={shouldHide} />
-      <HeadingLogo isMobile={isMobile} hidden={shouldHide} heading={heading} />
+      <HeadingLogo isMobile={isMobile} hidden={shouldHide} />
     </>
   );
 };
