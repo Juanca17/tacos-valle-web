@@ -16,6 +16,22 @@ import { SeoSection } from "./sections/SeoSection";
 import { GlobalFrameLogo } from "./sections/GlobalFrameLogo";
 import { MesaSection } from "./sections/Mesa";
 
+const draggableItems = [
+  { id: "box1", file: "1_trompo.png", alt: "Trompo", size: [120, 400] },
+  { id: "box2", file: "2_cebolla.png", alt: "Cebolla", size: [70, 200] },
+  {
+    id: "box3",
+    file: "3_tamarindo.png",
+    alt: "Tamarindo",
+    size: [40, 100],
+  },
+  { id: "box4", file: "4_taco.png", alt: "Taco", size: [100, 300] },
+  { id: "box5", file: "5_tostada.png", alt: "Tostada", size: [120, 350] },
+  { id: "box6", file: "6_mixtos.png", alt: "Mixtos", size: [150, 400] },
+  { id: "box7", file: "7_horchata.png", alt: "Horchata", size: [50, 150] },
+  { id: "box8", file: "8_flautas.png", alt: "Flautas", size: [150, 400] },
+];
+
 export default function Page() {
   const armaTuMesaRef = useRef(null);
   const initialPositions = {
@@ -55,6 +71,8 @@ export default function Page() {
   const [positions, setPositions] = useState(initialPositions);
   const [isPositionsLoaded, setIsPositionsLoaded] = useState(false);
 
+  console.log("positions", positions);
+
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -73,36 +91,67 @@ export default function Page() {
   }, []);
 
   useEffect(() => {
-    if (armaTuMesaRef.current && !isPositionsLoaded) {
-      const windowIsMobile = window.innerWidth < 800;
-      const { offsetTop, offsetLeft } = armaTuMesaRef.current;
+    if (!armaTuMesaRef.current || isPositionsLoaded) return;
 
-      const mobilePositions = {
-        box1: { x: offsetLeft + 271, y: offsetTop + 67 },
-        box2: { x: offsetLeft + 118, y: offsetTop + 213 },
-        box3: { x: offsetLeft + 6, y: offsetTop + 63 },
-        box4: { x: offsetLeft + 1, y: offsetTop + 286 },
-        box5: { x: offsetLeft + 123, y: offsetTop + 452 },
-        box6: { x: offsetLeft + 215, y: offsetTop + 616 },
-        box7: { x: offsetLeft + 223, y: offsetTop + 311 },
-        box8: { x: offsetLeft + 24, y: offsetTop + 477 },
-      };
-      const regularPositions = {
-        box1: { x: offsetLeft + 1189, y: offsetTop + 123 },
-        box2: { x: offsetLeft + 828, y: offsetTop + 232 },
-        box3: { x: offsetLeft + 661, y: offsetTop + 492 },
-        box4: { x: offsetLeft + 516, y: offsetTop + 107 },
-        box5: { x: offsetLeft + 1052, y: offsetTop + 503 },
-        box6: { x: offsetLeft + 91, y: offsetTop + 541 },
-        box7: { x: offsetLeft + 132, y: offsetTop + 113 },
-        box8: { x: offsetLeft + 437, y: offsetTop + 397 },
-      };
-      setPositions((prev) => ({
-        ...prev,
-        ...(windowIsMobile ? mobilePositions : regularPositions),
-      }));
-      setIsPositionsLoaded(true);
-    }
+    const windowIsMobile = window.innerWidth < 800;
+
+    const mobilePositions = {
+      box1: { x: 234, y: 436 },
+      box2: { x: 175.5, y: 394 },
+      box3: { x: 137, y: 368.5 },
+      box4: { x: 199.5, y: 325.5 },
+      box5: { x: 277.5, y: 357.5 },
+      box6: { x: -3, y: 370 },
+      box7: { x: 349.5, y: 402.5 },
+      box8: { x: 102, y: 441 },
+    };
+
+    const regularPositions = {
+      box1: { x: 708, y: 746 },
+      box2: { x: 607, y: 655 },
+      box3: { x: 490, y: 615 },
+      box4: { x: 706, y: 457 },
+      box5: { x: 935, y: 552 },
+      box6: { x: 81, y: 573 },
+      box7: { x: 1161, y: 725 },
+      box8: { x: 359, y: 775 },
+    };
+
+    // Posición absoluta del contenedor en la página
+    const { offsetTop, offsetLeft } = armaTuMesaRef.current;
+
+    const rect = armaTuMesaRef.current.getBoundingClientRect();
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+    const containerTop = rect.top + scrollTop;
+    const containerLeft = rect.left + scrollLeft;
+
+    console.log("OFFSET", {
+      offsetTop,
+      offsetLeft,
+      containerTop,
+      containerLeft,
+    });
+
+    // Escoge posiciones segun el tamaño de ventana
+    const sourcePositions = windowIsMobile ? mobilePositions : regularPositions;
+
+    // Convierte de absolutos a relativos al contenedor
+    const relativePositions = Object.fromEntries(
+      Object.entries(sourcePositions).map(([key, pos]) => [
+        key,
+        {
+          x: pos.x - offsetLeft,
+          y: pos.y + offsetTop,
+        },
+      ])
+    );
+
+    setPositions((prev) => ({
+      ...prev,
+      ...relativePositions,
+    }));
+    setIsPositionsLoaded(true);
   }, [armaTuMesaRef, isPositionsLoaded]);
 
   const handleDragEnd = (event) => {
@@ -153,78 +202,18 @@ export default function Page() {
         <CerroSilla />
         <SeoSection />
 
-        <DraggableComponent
-          id="box1"
-          position={positions.box1}
-          src={`${basePath}/images/mesa/CAGUAMITA.png`}
-          alt="Taco de asada"
-          width={isMobile ? 80 : 150}
-          height={isMobile ? 80 : 150}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box2"
-          position={positions.box2}
-          src={`${basePath}/images/mesa/ORDEN_TOMPRO.png`}
-          alt="Espiro-papas"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box3"
-          position={positions.box3}
-          src={`${basePath}/images/mesa/ASADA.png`}
-          alt="Taco de asada"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box4"
-          position={positions.box4}
-          src={`${basePath}/images/mesa/FLAUTAS.png`}
-          alt="Espiro-papas"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box5"
-          position={positions.box5}
-          src={`${basePath}/images/mesa/TROMPO.png`}
-          alt="Pastor"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box6"
-          position={positions.box6}
-          src={`${basePath}/images/mesa/TROMPO_ROJO.png`}
-          alt="Pastor negro"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box7"
-          position={positions.box7}
-          src={`${basePath}/images/mesa/TIJUANITA.png`}
-          alt="Pastor negro"
-          width={isMobile ? 150 : 300}
-          height={isMobile ? 150 : 300}
-          visible={isPositionsLoaded}
-        />
-        <DraggableComponent
-          id="box8"
-          position={positions.box8}
-          src={`${basePath}/images/mesa/HORCHATA.png`}
-          alt="Pastor negro"
-          width={isMobile ? 80 : 120}
-          height={isMobile ? 80 : 120}
-          visible={isPositionsLoaded}
-        />
+        {draggableItems.map(({ id, file, alt, size }) => (
+          <DraggableComponent
+            key={id}
+            id={id}
+            position={positions[id]}
+            src={`${basePath}/images/mesa-2/${file}`}
+            alt={alt}
+            width={isMobile ? size[0] : size[1]}
+            height={isMobile ? size[0] : size[1]}
+            visible={isPositionsLoaded}
+          />
+        ))}
       </DndContext>
     </div>
   );
