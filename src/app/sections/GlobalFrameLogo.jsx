@@ -20,7 +20,7 @@ const HeadingLogo = ({ isMobile, hidden, shouldBeWhite }) => {
     >
       <FixedLogo
         className="fixed-logo"
-        color={shouldBeWhite ? "white" : "#FF4200"}
+        color={!isMobile && shouldBeWhite ? "white" : "#FF4200"}
       />
     </div>
   );

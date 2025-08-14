@@ -8,13 +8,13 @@ import { Heading2 } from "./sections/Heading2";
 import { Tagline } from "./sections/Tagline";
 import { Sucursales2 } from "./sections/Sucursales2";
 import { SeComeRico } from "./sections/SeComeRico";
-import { TacosTacosTacos } from "./sections/TacosTacosTacos";
 import { Links } from "./sections/Links";
 import { CerroSilla } from "./sections/CerroSilla";
 import { MarqueeWhite2 } from "./sections/MarqueeWhite2";
 import { GlobalFrame } from "./sections/GlobalFrame";
 import { SeoSection } from "./sections/SeoSection";
 import { GlobalFrameLogo } from "./sections/GlobalFrameLogo";
+import { MesaSection } from "./sections/Mesa";
 
 export default function Page() {
   const armaTuMesaRef = useRef(null);
@@ -148,7 +148,7 @@ export default function Page() {
         <MarqueeWhite2 />
         <Sucursales2 />
         <SeComeRico />
-        <TacosTacosTacos isMobile={isMobile} ref={armaTuMesaRef} />
+        <MesaSection isMobile={isMobile} ref={armaTuMesaRef} />
         <Links />
         <CerroSilla />
         <SeoSection />
