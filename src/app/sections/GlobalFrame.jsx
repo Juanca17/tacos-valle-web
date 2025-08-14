@@ -1,6 +1,5 @@
 "use client";
 
-import FixedLogo from "../components/FixedLogo";
 import { useDidIntersect } from "../components/useDidIntersect";
 import { SOCIAL_LINKS } from "../config";
 
@@ -51,31 +50,8 @@ const HeadingButtons = ({ hidden }) => {
   );
 };
 
-const HeadingLogo = ({ isMobile, hidden }) => {
-  return (
-    <div
-      className={`fixed z-20 w-screen flex justify-center transition-opacity duration-700 ease-in-out ${
-        hidden ? "opacity-0 pointer-events-none" : "opacity-100"
-      }`}
-      style={{
-        bottom: "0",
-        background: isMobile ? "#EAE8DF" : "transparent",
-        paddingBottom: isMobile ? "2rem" : "2rem",
-        paddingTop: isMobile ? "2rem" : "2rem",
-      }}
-    >
-      <FixedLogo className="fixed-logo" color="#FF4200" />
-    </div>
-  );
-};
-
 export const GlobalFrame = ({ isMobile }) => {
   const shouldHide = useDidIntersect(["tacos_tacos_tacos", "links"]);
 
-  return (
-    <>
-      <HeadingButtons hidden={shouldHide} />
-      <HeadingLogo isMobile={isMobile} hidden={shouldHide} />
-    </>
-  );
+  return <HeadingButtons hidden={shouldHide} />;
 };

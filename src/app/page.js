@@ -13,8 +13,8 @@ import { Links } from "./sections/Links";
 import { CerroSilla } from "./sections/CerroSilla";
 import { MarqueeWhite2 } from "./sections/MarqueeWhite2";
 import { GlobalFrame } from "./sections/GlobalFrame";
-// import { LogoSection } from "./sections/LogoSection";
 import { SeoSection } from "./sections/SeoSection";
+import { GlobalFrameLogo } from "./sections/GlobalFrameLogo";
 
 export default function Page() {
   const armaTuMesaRef = useRef(null);
@@ -142,6 +142,7 @@ export default function Page() {
     >
       <DndContext onDragEnd={handleDragEnd}>
         <GlobalFrame isMobile={isMobile} />
+        <GlobalFrameLogo isMobile={isMobile} />
         <Heading2 isMobile={isMobile} />
         <Tagline />
         <MarqueeWhite2 />
