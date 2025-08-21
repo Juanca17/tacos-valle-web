@@ -29,7 +29,7 @@ export const MesaSection = ({ isMobile, ref }) => {
       )}
 
       {/* GIF centrado arriba */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+      <div className="absolute top-10 md:top-0 left-1/2 -translate-x-1/2 z-20">
         <Image
           src={`${basePath}/images/armatumesa.gif`} // cambia por tu GIF real
           alt="Animación"
