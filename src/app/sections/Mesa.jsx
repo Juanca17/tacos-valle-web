@@ -10,6 +10,7 @@ export const MesaSection = ({ isMobile, ref }) => {
       className="relative h-[100vh] sm:h-[150vh] flex items-center justify-center overflow-hidden"
       ref={ref}
     >
+      {/* Fondo */}
       {isMobile ? (
         <Image
           src={`${basePath}/images/mesa_1_bg.png`}
@@ -26,6 +27,19 @@ export const MesaSection = ({ isMobile, ref }) => {
           }}
         />
       )}
+
+      {/* GIF centrado arriba */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 z-20">
+        <Image
+          src={`${basePath}/images/armatumesa.gif`} // cambia por tu GIF real
+          alt="Animación"
+          width={360} // ajusta a tu gusto
+          height={360}
+          unoptimized // permite animación en Next.js
+          priority
+          className="pointer-events-none select-none"
+        />
+      </div>
     </section>
   );
 };

@@ -186,18 +186,11 @@ export default function Page() {
     // Posición absoluta del contenedor en la página
     const { offsetTop, offsetLeft } = armaTuMesaRef.current;
 
-    const rect = armaTuMesaRef.current.getBoundingClientRect();
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
-    const containerTop = rect.top + scrollTop;
-    const containerLeft = rect.left + scrollLeft;
-
-    console.log("OFFSET", {
-      offsetTop,
-      offsetLeft,
-      containerTop,
-      containerLeft,
-    });
+    // const rect = armaTuMesaRef.current.getBoundingClientRect();
+    // const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    // const scrollLeft = window.scrollX || document.documentElement.scrollLeft;
+    // const containerTop = rect.top + scrollTop;
+    // const containerLeft = rect.left + scrollLeft;
 
     // Escoge posiciones segun el tamaño de ventana
     const sourcePositions = windowIsMobile ? mobilePositions : regularPositions;
@@ -259,7 +252,7 @@ export default function Page() {
         <GlobalFrame isMobile={isMobile} />
         <GlobalFrameLogo isMobile={isMobile} />
         <Heading2 isMobile={isMobile} />
-        <Tagline />
+        <Tagline isMobile={isMobile} />
         <MarqueeWhite2 />
         <Sucursales2 />
         <SeComeRico />

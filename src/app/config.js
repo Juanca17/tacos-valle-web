@@ -24,6 +24,12 @@ const TAGLINE_INFO = [
       "Tortilla (harina o maíz), costra de queso, carne asada, aguacate & papa rallada dorada.",
   },
   {
+    image: "tagline5.png",
+    name: "TROMPO NEGRO FUEGO",
+    description:
+      "Trompo de cerdo a base de pierna y porkbelly, ceniza de chiles y cebolla",
+  },
+  {
     image: "tagline4.png",
     name: "TROMPO ORDEN MIXTA",
     description: "Orden de 3 tacos con 1 pza de cada trompo de la casa.",

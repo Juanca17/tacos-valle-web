@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { basePath, TAGLINE_INFO } from "../config";
 
-export const Tagline = () => {
+export const Tagline = ({ isMobile }) => {
   return (
     <section
       id="tagline"
@@ -15,9 +15,16 @@ export const Tagline = () => {
         <p className="tagline-subtitle">Del Norte de México</p>
       </div>
 
-      <div className="mt-12 pb-[8rem] grid grid-cols-1 md:grid-cols-4 gap-8 px-4 md:px-20 justify-items-center">
+      <div
+        className={`mt-12 pb-[8rem] gap-8 px-4 md:px-20 justify-center flex flex-wrap`}
+      >
         {TAGLINE_INFO.map((item, index) => (
-          <div key={index} className="w-full max-w-xs">
+          <div
+            key={index}
+            className={`max-w-xs flex flex-col items-center ${
+              isMobile ? "basis-1/2" : "basis-1/5"
+            }`}
+          >
             <div className="w-[300px] h-[300px] mx-auto flex items-center justify-center">
               <Image
                 src={`${basePath}/images/tagline/${item.image}`}
