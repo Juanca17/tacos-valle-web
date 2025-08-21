@@ -23,13 +23,15 @@ const draggableItems = [
     id: "box3",
     file: "3_tamarindo.png",
     alt: "Tamarindo",
-    size: [40, 100],
+    size: [40, 80],
   },
   { id: "box4", file: "4_taco.png", alt: "Taco", size: [100, 300] },
   { id: "box5", file: "5_tostada.png", alt: "Tostada", size: [120, 350] },
   { id: "box6", file: "6_mixtos.png", alt: "Mixtos", size: [150, 400] },
   { id: "box7", file: "7_horchata.png", alt: "Horchata", size: [50, 150] },
   { id: "box8", file: "8_flautas.png", alt: "Flautas", size: [150, 400] },
+  { id: "box9", file: "9_verduras.png", alt: "Verduras", size: [50, 150] },
+  { id: "box10", file: "10_caguamita.png", alt: "Caguamita", size: [50, 120] },
 ];
 
 export default function Page() {
@@ -96,25 +98,89 @@ export default function Page() {
     const windowIsMobile = window.innerWidth < 800;
 
     const mobilePositions = {
-      box1: { x: 234, y: 436 },
-      box2: { x: 175.5, y: 394 },
-      box3: { x: 137, y: 368.5 },
-      box4: { x: 199.5, y: 325.5 },
-      box5: { x: 277.5, y: 357.5 },
-      box6: { x: -3, y: 370 },
-      box7: { x: 349.5, y: 402.5 },
-      box8: { x: 102, y: 441 },
+      box1: {
+        x: 234,
+        y: 436,
+      },
+      box2: {
+        x: 175.5,
+        y: 394,
+      },
+      box3: {
+        x: 158.5,
+        y: 293,
+      },
+      box4: {
+        x: 199.5,
+        y: 325.5,
+      },
+      box5: {
+        x: 277.5,
+        y: 357.5,
+      },
+      box6: {
+        x: -3,
+        y: 370,
+      },
+      box7: {
+        x: 349.5,
+        y: 402.5,
+      },
+      box8: {
+        x: 102,
+        y: 441,
+      },
+      box9: {
+        x: 32,
+        y: 372,
+      },
+      box10: {
+        x: 131.5,
+        y: 336,
+      },
     };
 
     const regularPositions = {
-      box1: { x: 708, y: 746 },
-      box2: { x: 607, y: 655 },
-      box3: { x: 490, y: 615 },
-      box4: { x: 706, y: 457 },
-      box5: { x: 935, y: 552 },
-      box6: { x: 81, y: 573 },
-      box7: { x: 1161, y: 725 },
-      box8: { x: 359, y: 775 },
+      box1: {
+        x: 714.5,
+        y: 538,
+      },
+      box2: {
+        x: 584,
+        y: 436.5,
+      },
+      box3: {
+        x: 647,
+        y: 180.5,
+      },
+      box4: {
+        x: 706,
+        y: 257,
+      },
+      box5: {
+        x: 984.5,
+        y: 311,
+      },
+      box6: {
+        x: 81,
+        y: 373,
+      },
+      box7: {
+        x: 1109.5,
+        y: 490,
+      },
+      box8: {
+        x: 358.5,
+        y: 564,
+      },
+      box9: {
+        x: 288,
+        y: 347.5,
+      },
+      box10: {
+        x: 471,
+        y: 308.5,
+      },
     };
 
     // Posición absoluta del contenedor en la página

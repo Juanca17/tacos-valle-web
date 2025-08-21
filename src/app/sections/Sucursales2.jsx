@@ -1,5 +1,4 @@
 import { SUCURSALES_INFO } from "../config";
-// min-w-[80vw] md:min-w-[360px]
 const SucursalItem = ({ sucursal }) => {
   return (
     <div className="bg-[#EAE8DF] rounded-[80px] min-w-[80vw] md:min-w-[360px] w-[80vw] sm:w-[420px] min-h-[500px] px-6 py-12 text-center shadow-lg">

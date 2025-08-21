@@ -46,6 +46,15 @@ export const SeoSection = () => {
             <br /> de cenizas negras y nuestro marinado especial.
           </span>
         </p>
+        <p className="mt-[4rem] leading-snug">
+          <span>
+            Tenemos el famoso
+            <br />
+            <span className="font-jean-luc-thin">Tijuanita</span>!{" "}
+            <span className="font-jean-luc-thin">Flautas</span>,{" "}
+            <span className="font-jean-luc-thin">Espiropapas</span> & más!{" "}
+          </span>
+        </p>
       </div>
     </section>
   );

@@ -18,18 +18,6 @@ const LINKS = {
 
 const TAGLINE_INFO = [
   {
-    image: "tagline1.png",
-    name: "FLAUTAS DE PAPA",
-    description:
-      "Flautas rellenas con puré de papa especial de la casa, bañadas con salsa cremosa de aguacate.",
-  },
-  {
-    image: "tagline2.png",
-    name: "TOSTADA DE LA SECU",
-    description:
-      "Tostada roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
-  },
-  {
     image: "tagline3.png",
     name: "TIJUANITA",
     description:
@@ -39,6 +27,18 @@ const TAGLINE_INFO = [
     image: "tagline4.png",
     name: "TROMPO ORDEN MIXTA",
     description: "Orden de 3 tacos con 1 pza de cada trompo de la casa.",
+  },
+  {
+    image: "tagline2.png",
+    name: "TOSTADA DE LA SECU",
+    description:
+      "Tostada roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
+  },
+  {
+    image: "tagline1.png",
+    name: "FLAUTAS DE PAPA",
+    description:
+      "Flautas rellenas con puré de papa especial de la casa, bañadas con salsa cremosa de aguacate.",
   },
 ];
 
@@ -60,18 +60,6 @@ const SUCURSALES_INFO = [
     cp: "06700",
     ciudad: "CDMX",
     link: "https://maps.app.goo.gl/cQz7L489LWN8R5NP8",
-  },
-  {
-    nombre: "Próximamente",
-    calle: "Nuevo León",
-    numero: "",
-    colonia: "ROMA NORTE",
-    cp: "",
-    ciudad: `25°34'00"N
-    99°58'14"0 /
-    25566666666667
-    -99970555555556`,
-    link: "",
   },
 ];
 

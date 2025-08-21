@@ -24,8 +24,8 @@ export default function DraggableComponent({
 
   const style = {
     position: "absolute",
-    left: `${position.x}px`,
-    top: `${position.y}px`,
+    left: `${position?.x || 0}px`,
+    top: `${position?.y || 0}px`,
     transform: transform
       ? `translate(${transform.x}px, ${transform.y}px)`
       : "none",
