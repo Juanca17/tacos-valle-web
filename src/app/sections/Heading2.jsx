@@ -91,9 +91,9 @@ export const Heading2 = ({ isMobile }) => {
           className={`absolute z-19 w-screen flex justify-center transition-opacity duration-700 ease-in-out opacity-100`}
           style={{
             bottom: "0",
-            background: isMobile ? "#FF4200" : "#EAE8DF",
-            paddingBottom: "5rem",
-            paddingTop: "5rem",
+            background: "#EAE8DF",
+            paddingTop: "11vh",
+            paddingBottom: "11vh",
           }}
         />
       ) : null}

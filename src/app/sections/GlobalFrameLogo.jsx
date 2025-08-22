@@ -14,8 +14,8 @@ const HeadingLogo = ({ isMobile, hidden, shouldBeWhite }) => {
       style={{
         bottom: "0",
         background: isMobile ? "#EAE8DF" : "transparent",
-        paddingBottom: isMobile ? "2rem" : "2rem",
-        paddingTop: isMobile ? "2rem" : "2rem",
+        paddingBottom: isMobile ? "2rem" : "4vh",
+        paddingTop: isMobile ? "2rem" : "4vh",
       }}
     >
       <FixedLogo
