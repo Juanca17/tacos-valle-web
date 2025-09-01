@@ -73,8 +73,6 @@ export default function Page() {
   const [positions, setPositions] = useState(initialPositions);
   const [isPositionsLoaded, setIsPositionsLoaded] = useState(false);
 
-  console.log("positions", positions);
-
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
