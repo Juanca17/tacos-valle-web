@@ -1,6 +1,6 @@
 "use client";
 
-import { useDidIntersect } from "../components/useDidIntersect";
+import { useDidIntersect } from "../helpers/useDidIntersect";
 import { SOCIAL_LINKS } from "../config";
 
 const HeadingButtons = ({ hidden }) => {

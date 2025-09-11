@@ -1,8 +1,8 @@
 "use client";
 
 import FixedLogo from "../components/FixedLogo";
-import { useAnchorTopWithinSections } from "../components/useAnchorTop";
-import { useDidIntersect } from "../components/useDidIntersect";
+import { useAnchorTopWithinSections } from "../helpers/useAnchorTop";
+import { useDidIntersect } from "../helpers/useDidIntersect";
 
 const HeadingLogo = ({ isMobile, hidden, shouldBeWhite }) => {
   return (
