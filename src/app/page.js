@@ -17,8 +17,8 @@ import { GlobalFrameLogo } from "./sections/GlobalFrameLogo";
 import { MesaSection } from "./sections/Mesa";
 
 const draggableItems = [
-  { id: "box1", file: "1_trompo.png", alt: "Trompo", size: [120, 400] },
-  { id: "box2", file: "2_cebolla.png", alt: "Cebolla", size: [70, 200] },
+  { id: "box1", file: "1_trompo.png", alt: "Trompo", size: [150, 400] },
+  { id: "box2", file: "2_cebolla.png", alt: "Cebolla", size: [60, 110] },
   {
     id: "box3",
     file: "3_tamarindo.png",
@@ -28,10 +28,16 @@ const draggableItems = [
   { id: "box4", file: "4_taco.png", alt: "Taco", size: [100, 300] },
   { id: "box5", file: "5_tostada.png", alt: "Tostada", size: [120, 350] },
   { id: "box6", file: "6_mixtos.png", alt: "Mixtos", size: [150, 400] },
-  { id: "box7", file: "7_horchata.png", alt: "Horchata", size: [50, 150] },
-  { id: "box8", file: "8_flautas.png", alt: "Flautas", size: [150, 400] },
-  { id: "box9", file: "9_verduras.png", alt: "Verduras", size: [50, 150] },
-  { id: "box10", file: "10_caguamita.png", alt: "Caguamita", size: [50, 120] },
+  { id: "box7", file: "7_horchata.png", alt: "Horchata", size: [50, 130] },
+  { id: "box8", file: "8_flautas.png", alt: "Flautas", size: [120, 400] },
+  { id: "box9", file: "9_verduras.png", alt: "Verduras", size: [50, 120] },
+  {
+    id: "box11",
+    file: "11_cebollitas.png",
+    alt: "Condimentos",
+    size: [80, 200],
+  },
+  { id: "box10", file: "10_caguamita.png", alt: "Caguamita", size: [45, 110] },
 ];
 
 export default function Page() {
@@ -97,87 +103,95 @@ export default function Page() {
 
     const mobilePositions = {
       box1: {
-        x: 234,
-        y: 436,
+        x: 172.5,
+        y: 360,
       },
       box2: {
-        x: 175.5,
-        y: 394,
+        x: 136.5,
+        y: 341,
       },
       box3: {
-        x: 158.5,
-        y: 293,
+        x: 147,
+        y: 258.5,
       },
       box4: {
-        x: 199.5,
-        y: 325.5,
+        x: 193.5,
+        y: 284,
       },
       box5: {
-        x: 277.5,
-        y: 357.5,
+        x: 283,
+        y: 306.5,
       },
       box6: {
-        x: -3,
-        y: 370,
+        x: 0,
+        y: 331.5,
       },
       box7: {
-        x: 349.5,
-        y: 402.5,
+        x: 317,
+        y: 377.5,
       },
       box8: {
-        x: 102,
-        y: 441,
+        x: 110.5,
+        y: 413.5,
       },
       box9: {
-        x: 32,
-        y: 372,
+        x: 80.5,
+        y: 331,
       },
       box10: {
-        x: 131.5,
-        y: 336,
+        x: 26.5,
+        y: 286,
+      },
+      box11: {
+        x: 61,
+        y: 240,
       },
     };
 
     const regularPositions = {
       box1: {
-        x: 714.5,
-        y: 538,
+        x: 808.5,
+        y: 430,
       },
       box2: {
-        x: 584,
-        y: 436.5,
+        x: 518,
+        y: 351.5,
       },
       box3: {
-        x: 647,
-        y: 180.5,
+        x: 574,
+        y: 176.5,
       },
       box4: {
-        x: 706,
-        y: 257,
+        x: 674.5,
+        y: 180.5,
       },
       box5: {
-        x: 984.5,
-        y: 311,
+        x: 954,
+        y: 222.5,
       },
       box6: {
-        x: 81,
-        y: 373,
+        x: 133,
+        y: 319,
       },
       box7: {
-        x: 1109.5,
-        y: 490,
+        x: 1191.5,
+        y: 381,
       },
       box8: {
-        x: 358.5,
-        y: 564,
+        x: 463.5,
+        y: 454.5,
       },
       box9: {
-        x: 288,
-        y: 347.5,
+        x: 215,
+        y: 279.5,
       },
       box10: {
-        x: 471,
-        y: 308.5,
+        x: 411,
+        y: 258.5,
+      },
+      box11: {
+        x: 333.5,
+        y: 81.5,
       },
     };
 

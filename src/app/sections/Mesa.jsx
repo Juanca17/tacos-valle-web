@@ -13,7 +13,7 @@ export const MesaSection = ({ isMobile, ref }) => {
       {/* Fondo */}
       {isMobile ? (
         <Image
-          src={`${basePath}/images/mesa_1_bg.png`}
+          src={`${basePath}/images/mesa_bg.png`}
           alt="Tacos background"
           fill
           className="object-cover w-[80%] h-full object-top"
@@ -23,7 +23,7 @@ export const MesaSection = ({ isMobile, ref }) => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${basePath}/images/mesa_1_bg.png')`,
+            backgroundImage: `url('${basePath}/images/mesa_bg.png')`,
           }}
         />
       )}
