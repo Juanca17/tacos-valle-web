@@ -1,96 +1,124 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { basePath, LINKS } from "../config";
-import { HeadingImage } from "../components/HeadingImage";
 import Image from "next/image";
+import CarouselCss from "../components/Carousel";
 
-const headingImages = [
+const headingImagesAlt = [
   {
-    url: "heading1.webp",
-    imgClass: "object-[40%_60%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-1.png",
+    alt: "Tacos Del Valle 1",
   },
   {
-    url: "heading2.webp",
-    imgClass: "object-[40%_45%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-2.png",
+    alt: "Tacos Del Valle 2",
   },
   {
-    url: "heading3.webp",
-    imgClass: "object-[50%_50%] md:object-[40%_45%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-3.png",
+    alt: "Tacos Del Valle 3",
   },
   {
-    url: "heading4.webp",
-    imgClass: "object-[40%_62%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-4.png",
+    alt: "Tacos Del Valle 4",
   },
   {
-    url: "heading5.webp",
-    imgClass: "scale-[120%] object-[40%_40%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-5.png",
+    alt: "Tacos Del Valle 5",
   },
   {
-    url: "heading6.webp",
-    imgClass: "object-[30%_52%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-6.png",
+    alt: "Tacos Del Valle 6",
   },
   {
-    url: "heading7.webp",
-    imgClass: "object-[30%_52%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-7.png",
+    alt: "Tacos Del Valle 7",
   },
   {
-    url: "heading8.webp",
-    imgClass: "scale-[150%] object-[30%_80%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-8.png",
+    alt: "Tacos Del Valle 8",
   },
   {
-    url: "heading9.png",
-    imgClass: "object-[80%_20%]",
+    src: "https://ik.imagekit.io/qrtbcc020/heading/header-9.png",
+    alt: "Tacos Del Valle 9",
+  },
+];
+
+const headingImagesMobile = [
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-1.png",
+    alt: "Tacos Del Valle 1",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-2.png",
+    alt: "Tacos Del Valle 2",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-3.png",
+    alt: "Tacos Del Valle 3",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-4.png",
+    alt: "Tacos Del Valle 4",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-5.png",
+    alt: "Tacos Del Valle 5",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-6.png",
+    alt: "Tacos Del Valle 6",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-7.png",
+    alt: "Tacos Del Valle 7",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-8.png",
+    alt: "Tacos Del Valle 8",
+  },
+  {
+    src: "https://ik.imagekit.io/qrtbcc020/heading-mobile/heading-9.png",
+    alt: "Tacos Del Valle 9",
   },
 ];
 
 export const Heading2 = ({ isMobile }) => {
-  const [imageIndex, setImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setImageIndex((prev) => (prev + 1) % headingImages.length);
-    }, 3500);
-
-    return () => clearInterval(interval);
-  }, [imageIndex]);
-
   return (
     <header
       id="heading"
-      className="w-full h-[100vh] md:h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
+      className="w-full h-[100vh] overflow-hidden flex flex-col md:flex-row relative"
       style={{ background: "#FF4200" }}
     >
       <div
         className="absolute z-20 w-screen md:px-6"
-        style={{ top: "125px", left: "0" }}
+        style={{ top: 125, left: 0 }}
       >
         <a
           href={LINKS.MICHELIN_GUIDE}
           target="_blank"
           rel="noopener noreferrer"
-          className="cursosr-pointer"
+          className="inline-block"
         >
           <Image
-            src={`${basePath}/images/heading/michelin.png`}
+            src="https://ik.imagekit.io/qrtbcc020/tdv/michelin.png"
             alt="MICHELIN BIB GOURMAND"
             width={isMobile ? 100 : 160}
             height={isMobile ? 100 : 160}
+            priority
           />
         </a>
       </div>
-      <div className="relative w-full h-full overflow-hidden">
-        <HeadingImage
-          src={`${basePath}/images/heading/${headingImages[imageIndex].url}`}
-          alt="Tacos Del Valle"
-          imgClass={headingImages[imageIndex].imgClass}
-        />
-      </div>
+
+      <CarouselCss
+        images={isMobile ? headingImagesMobile : headingImagesAlt}
+        interval={3.5}
+      />
+
       {!isMobile ? (
         <div
-          className={`absolute z-19 w-screen flex justify-center transition-opacity duration-700 ease-in-out opacity-100`}
+          className="absolute z-19 w-screen flex justify-center opacity-100"
           style={{
-            bottom: "0",
+            bottom: 0,
             background: "#EAE8DF",
             paddingTop: "11vh",
             paddingBottom: "11vh",

@@ -21,7 +21,7 @@ export const MarqueeWhite2 = () => {
                     </div>
                     <div className="w-[80px] h-[80px] mx-3 flex items-center justify-center">
                       <Image
-                        src={`${basePath}/images/limon_orange_white.png`}
+                        src="https://ik.imagekit.io/qrtbcc020/tdv/limon_orange_white.png"
                         alt="Limon personaje"
                         width={80}
                         height={80}

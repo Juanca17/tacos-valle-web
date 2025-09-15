@@ -14,7 +14,7 @@
   }
 }
 
-@font-face {
+/* @font-face {
   font-family: "GTAlpinaBold";
   src: url("/tacos-valle-web/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf")
     format("truetype");
@@ -79,10 +79,10 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-}
+} */
 
 /** Local **/
-/* @font-face {
+@font-face {
   font-family: "GTAlpinaBold";
   src: url("/fonts/1_GTAlpina/GT-Alpina-Condensed-Bold.ttf") format("truetype");
   font-weight: bold;
@@ -144,7 +144,7 @@
     format("truetype");
   font-weight: bold;
   font-style: normal;
-} */
+}
 
 @layer utilities {
   @keyframes slideDown {
@@ -391,4 +391,38 @@ body {
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Safari & Chrome */
+}
+
+/* Carrusel con css */
+@keyframes showSlide {
+  0% {
+    opacity: 1;
+  }
+  11.11% {
+    opacity: 1;
+  }
+  11.12% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  animation: showSlide 31.5s linear infinite; /* 9 * 3.5s = 31.5s */
+}
+
+/* accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-slide {
+    animation: none !important;
+    opacity: 0 !important;
+  }
+  .carousel-slide:first-child {
+    opacity: 1 !important;
+  }
 }

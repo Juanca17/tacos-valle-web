@@ -13,7 +13,7 @@ export const MesaSection = ({ isMobile, ref }) => {
       {/* Fondo */}
       {isMobile ? (
         <Image
-          src={`${basePath}/images/mesa_bg.png`}
+          src="https://ik.imagekit.io/qrtbcc020/tdv/mesa_bg.png"
           alt="Tacos background"
           fill
           className="object-cover w-[80%] h-full object-top"
@@ -23,7 +23,7 @@ export const MesaSection = ({ isMobile, ref }) => {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url('${basePath}/images/mesa_bg.png')`,
+            backgroundImage: `url('https://ik.imagekit.io/qrtbcc020/tdv/mesa_bg.png')`,
           }}
         />
       )}
@@ -31,7 +31,7 @@ export const MesaSection = ({ isMobile, ref }) => {
       {/* GIF centrado arriba */}
       <div className="absolute top-10 md:top-0 left-1/2 -translate-x-1/2 z-20">
         <Image
-          src={`${basePath}/images/armatumesa.gif`} // cambia por tu GIF real
+          src="https://ik.imagekit.io/qrtbcc020/tdv/armatumesa.gif" // cambia por tu GIF real
           alt="Animación"
           width={360} // ajusta a tu gusto
           height={360}

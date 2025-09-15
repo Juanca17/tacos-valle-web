@@ -1,5 +1,4 @@
-const basePath =
-  process.env.NODE_ENV === "production" ? "/tacos-valle-web" : "";
+const basePath = "";
 
 const SOCIAL_LINKS = {
   FACEBOOK: "https://www.facebook.com/tttttdv",
@@ -18,30 +17,30 @@ const LINKS = {
 
 const TAGLINE_INFO = [
   {
-    image: "tagline3.png",
+    src: "https://ik.imagekit.io/qrtbcc020/tagline/tagline3.png",
     name: "Tijuanita",
     description:
       "Tortilla (harina o maíz), costra de queso, carne asada, aguacate & papa rallada dorada.",
   },
   {
-    image: "tagline5.png",
+    src: "https://ik.imagekit.io/qrtbcc020/tagline/tagline5.png",
     name: "Trompo Negro Fuego",
     description:
       "Trompo de cerdo a base de pierna y porkbelly, ceniza de chiles y cebolla",
   },
   {
-    image: "tagline4.png",
+    src: "https://ik.imagekit.io/qrtbcc020/tagline/tagline4.png",
     name: "Trompo Orden Mixta",
     description: "Orden de 3 tacos con 1 pza de cada trompo de la casa.",
   },
   {
-    image: "tagline2.png",
+    src: "https://ik.imagekit.io/qrtbcc020/tagline/tagline2.png",
     name: "Tostada De La Secu",
     description:
       "Tostada roja con base de frijoles chinitos, carne asada, ensaladilla de col con salsa verde.",
   },
   {
-    image: "tagline1.png",
+    src: "https://ik.imagekit.io/qrtbcc020/tagline/tagline1.png",
     name: "Flautas De Papa",
     description:
       "Flautas rellenas con puré de papa especial de la casa, bañadas con salsa cremosa de aguacate.",

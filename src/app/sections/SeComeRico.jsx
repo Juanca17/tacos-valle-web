@@ -6,7 +6,7 @@ export const SeComeRico = () => {
       id="secomerico"
       className="relative h-[50vh] md:h-[120vh] bg-cover bg-center flex items-center justify-center"
       style={{
-        backgroundImage: `url('${basePath}/images/se_come_rico_bg.png')`,
+        backgroundImage: `url('${basePath}/images/se_come_rico_bg.webp')`,
       }}
     >
       {/* Elipse blanca (simula el trazo) */}

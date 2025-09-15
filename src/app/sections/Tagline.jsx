@@ -26,12 +26,7 @@ export const Tagline = ({ isMobile }) => {
             }`}
           >
             <div className="w-[300px] h-[300px] mx-auto flex items-center justify-center">
-              <Image
-                src={`${basePath}/images/tagline/${item.image}`}
-                alt={item.name}
-                width={300}
-                height={300}
-              />
+              <Image src={item.src} alt={item.name} width={300} height={300} />
             </div>
             <div className="mt-4 text-center">
               <p className="font-gt-alpina-bold-italic text-lg">{item.name}</p>
