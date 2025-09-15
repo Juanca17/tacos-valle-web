@@ -42,6 +42,7 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <head>
         {/* Meta Pixel Code */}
+        <link rel="preconnect" href="https://ik.imagekit.io" crossOrigin="" />
         <Script id="fb-pixel" strategy="afterInteractive">
           {`
             !function(f,b,e,v,n,t,s)

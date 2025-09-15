@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { DndContext } from "@dnd-kit/core";
 import DraggableComponent from "./components/DraggableComponent";
-import { basePath } from "./config";
 import { Heading2 } from "./sections/Heading2";
 import { Tagline } from "./sections/Tagline";
 import { Sucursales2 } from "./sections/Sucursales2";
