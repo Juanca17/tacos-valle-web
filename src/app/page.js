@@ -21,77 +21,77 @@ const draggableItems = [
     file: "1_trompo.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/1_trompo.png",
     alt: "Trompo",
-    size: [150, 400],
+    size: [150, 400, 600],
   },
   {
     id: "box2",
     file: "2_cebolla.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/2_cebolla.png",
     alt: "Cebolla",
-    size: [60, 110],
+    size: [60, 110, 165],
   },
   {
     id: "box3",
     file: "3_tamarindo.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/3_tamarindo.png",
     alt: "Tamarindo",
-    size: [40, 80],
+    size: [40, 80, 120],
   },
   {
     id: "box4",
     file: "4_taco.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/4_taco.png",
     alt: "Taco",
-    size: [100, 300],
+    size: [100, 300, 450],
   },
   {
     id: "box5",
     file: "5_tostada.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/5_tostada.png",
     alt: "Tostada",
-    size: [120, 350],
+    size: [120, 350, 525],
   },
   {
     id: "box6",
     file: "6_mixtos.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/6_mixtos.png",
     alt: "Mixtos",
-    size: [150, 400],
+    size: [150, 400, 600],
   },
   {
     id: "box7",
     file: "7_horchata.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/7_horchata.png",
     alt: "Horchata",
-    size: [50, 130],
+    size: [50, 130, 195],
   },
   {
     id: "box8",
     file: "8_flautas.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/8_flautas.png",
     alt: "Flautas",
-    size: [120, 400],
+    size: [120, 400, 600],
   },
   {
     id: "box9",
     file: "9_verduras.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/9_verduras.png",
     alt: "Verduras",
-    size: [50, 120],
+    size: [50, 120, 180],
   },
   {
     id: "box11",
     file: "11_cebollitas.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/11_cebollitas.png",
     alt: "Condimentos",
-    size: [80, 200],
+    size: [80, 200, 300],
   },
   {
     id: "box10",
     file: "10_caguamita.png",
     src: "https://ik.imagekit.io/qrtbcc020/mesa/10_caguamita.png",
     alt: "Caguamita",
-    size: [45, 110],
+    size: [45, 110, 165],
   },
 ];
 
@@ -135,7 +135,6 @@ export default function Page() {
   const [isPositionsLoaded, setIsPositionsLoaded] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
     // Solo ejecutamos esto en el cliente
     const checkIsMobile = () => window.innerWidth < 640;
@@ -143,6 +142,22 @@ export default function Page() {
 
     const handleResize = () => {
       setIsMobile(checkIsMobile());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [isUltraSize, setIsUltraSize] = useState(false);
+  useEffect(() => {
+    const checkIsUltra = () => window.innerWidth >= 2400;
+
+    setIsUltraSize(checkIsUltra());
+
+    const handleResize = () => {
+      setIsUltraSize(checkIsUltra());
     };
 
     window.addEventListener("resize", handleResize);
@@ -328,18 +343,30 @@ export default function Page() {
         <CerroSilla />
         <SeoSection />
 
-        {draggableItems.map(({ id, file, alt, size, src }) => (
-          <DraggableComponent
-            key={id}
-            id={id}
-            position={positions[id]}
-            src={src}
-            alt={alt}
-            width={isMobile ? size[0] : size[1]}
-            height={isMobile ? size[0] : size[1]}
-            visible={isPositionsLoaded}
-          />
-        ))}
+        {draggableItems.map(({ id, src, alt, size }) => {
+          let finalSize;
+
+          if (isUltraSize) {
+            finalSize = size[2]; // ultra
+          } else if (isMobile) {
+            finalSize = size[0]; // móvil
+          } else {
+            finalSize = size[1]; // normal
+          }
+
+          return (
+            <DraggableComponent
+              key={id}
+              id={id}
+              position={positions[id]}
+              src={src}
+              alt={alt}
+              width={finalSize}
+              height={finalSize}
+              visible={isPositionsLoaded}
+            />
+          );
+        })}
       </DndContext>
     </div>
   );
